@@ -18,6 +18,10 @@
 		B80A0C412796D9D3004E1BB3 /* CustomLabelTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B80A0C402796D9D3004E1BB3 /* CustomLabelTest.storyboard */; };
 		B80A0C442796E905004E1BB3 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B80A0C422796E904004E1BB3 /* NotoSansKR-Regular.otf */; };
 		B80A0C452796E905004E1BB3 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B80A0C432796E905004E1BB3 /* NotoSansKR-Medium.otf */; };
+		B80A0C4A279707C3004E1BB3 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = B80A0C49279707C3004E1BB3 /* Moya */; };
+		B80A0C4C279707C3004E1BB3 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = B80A0C4B279707C3004E1BB3 /* RxMoya */; };
+		B80A0C4E27970808004E1BB3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80A0C4D27970808004E1BB3 /* APIService.swift */; };
+		B80A0C502797080F004E1BB3 /* APITarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80A0C4F2797080F004E1BB3 /* APITarget.swift */; };
 		B84F2A0527968BC900D2169C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B84F2A0427968BC900D2169C /* GoogleService-Info.plist */; };
 		B87F672E279626A400A30366 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B87F672D279626A400A30366 /* FirebaseAnalytics */; };
 		B87F6730279626A400A30366 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B87F672F279626A400A30366 /* FirebaseAuth */; };
@@ -39,6 +43,8 @@
 		B80A0C402796D9D3004E1BB3 /* CustomLabelTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomLabelTest.storyboard; sourceTree = "<group>"; };
 		B80A0C422796E904004E1BB3 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		B80A0C432796E905004E1BB3 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
+		B80A0C4D27970808004E1BB3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		B80A0C4F2797080F004E1BB3 /* APITarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITarget.swift; sourceTree = "<group>"; };
 		B84F2A0427968BC900D2169C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B84F2A0627968BF000D2169C /* SeSAC_SLP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeSAC_SLP.entitlements; sourceTree = "<group>"; };
 		B8EDF6642795C84F0007DD67 /* SeSAC_SLP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC_SLP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,9 +63,11 @@
 			files = (
 				B80A0C2B279699BF004E1BB3 /* RxCocoa in Frameworks */,
 				B87F6734279626A400A30366 /* FirebaseMessaging in Frameworks */,
+				B80A0C4A279707C3004E1BB3 /* Moya in Frameworks */,
 				B87F6732279626A400A30366 /* FirebaseCrashlytics in Frameworks */,
 				B87F672E279626A400A30366 /* FirebaseAnalytics in Frameworks */,
 				B87F6730279626A400A30366 /* FirebaseAuth in Frameworks */,
+				B80A0C4C279707C3004E1BB3 /* RxMoya in Frameworks */,
 				B80A0C262796939E004E1BB3 /* SnapKit in Frameworks */,
 				B80A0C2D279699BF004E1BB3 /* RxSwift in Frameworks */,
 			);
@@ -130,6 +138,8 @@
 		B80A0C352796C210004E1BB3 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				B80A0C4D27970808004E1BB3 /* APIService.swift */,
+				B80A0C4F2797080F004E1BB3 /* APITarget.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -203,6 +213,8 @@
 				B80A0C252796939E004E1BB3 /* SnapKit */,
 				B80A0C2A279699BF004E1BB3 /* RxCocoa */,
 				B80A0C2C279699BF004E1BB3 /* RxSwift */,
+				B80A0C49279707C3004E1BB3 /* Moya */,
+				B80A0C4B279707C3004E1BB3 /* RxMoya */,
 			);
 			productName = SeSAC_SLP;
 			productReference = B8EDF6642795C84F0007DD67 /* SeSAC_SLP.app */;
@@ -236,6 +248,7 @@
 				B87F672C279626A400A30366 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				B80A0C242796939E004E1BB3 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				B80A0C29279699BF004E1BB3 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				B80A0C48279707C3004E1BB3 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = B8EDF6652795C84F0007DD67 /* Products */;
 			projectDirPath = "";
@@ -270,10 +283,12 @@
 				B80A0C3B2796C61E004E1BB3 /* UIFont+Extension.swift in Sources */,
 				B8EDF6682795C84F0007DD67 /* AppDelegate.swift in Sources */,
 				B8EDF66A2795C84F0007DD67 /* SceneDelegate.swift in Sources */,
+				B80A0C502797080F004E1BB3 /* APITarget.swift in Sources */,
 				B80A0C3D2796CC22004E1BB3 /* UILabel+Extension.swift in Sources */,
 				B80A0C28279696F8004E1BB3 /* MessageViewController.swift in Sources */,
 				B80A0C3F2796D283004E1BB3 /* UILabel+Class.swift in Sources */,
 				B8EDF6722795C84F0007DD67 /* SeSAC_SLP.xcdatamodeld in Sources */,
+				B80A0C4E27970808004E1BB3 /* APIService.swift in Sources */,
 				B80A0C372796C4DE004E1BB3 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,6 +521,14 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		B80A0C48279707C3004E1BB3 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
 		B87F672C279626A400A30366 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -531,6 +554,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B80A0C29279699BF004E1BB3 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		B80A0C49279707C3004E1BB3 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B80A0C48279707C3004E1BB3 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		B80A0C4B279707C3004E1BB3 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B80A0C48279707C3004E1BB3 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
 		};
 		B87F672D279626A400A30366 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
