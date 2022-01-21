@@ -10,6 +10,8 @@ import UIKit
 
 extension UIFont {
     
+    class var onboard_M24: UIFont? { return UIFont(name: "NotoSansKR-Regular", size: 24)}
+    
     class var display1_R20: UIFont? { return UIFont(name: "NotoSansKR-Regular", size: 20)}
     
     class var title1_M16: UIFont? { return UIFont(name: "NotoSansKR-Medium", size: 16)}

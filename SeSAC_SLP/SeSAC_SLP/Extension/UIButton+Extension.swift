@@ -24,7 +24,7 @@ extension UIButton {
         self.setBorderColorAndRadius(borderColor: .sesacGreen, borderWidth: 0.5, cornerRadius: 8)
         self.setTitle(text, for: .normal)
         self.setTitleColor(.white, for: .normal)
-        self.setBackgroundColor(.sesacGreen!, for: .normal)
+        self.setBackgroundColor(.sesacGreen, for: .normal)
         self.titleLabel?.font = .body3_R14
     }
     
@@ -42,7 +42,7 @@ extension UIButton {
         self.setBorderColorAndRadius(borderColor: .sesacGray2, borderWidth: 0.5, cornerRadius: 8)
         self.setTitle(text, for: .normal)
         self.setTitleColor(.sesacBlack, for: .normal)
-        self.setBackgroundColor(.sesacGray2!, for: .normal)
+        self.setBackgroundColor(.sesacGray2, for: .normal)
         self.titleLabel?.font = .body3_R14
     }
     
@@ -51,7 +51,7 @@ extension UIButton {
         self.setBorderColorAndRadius(borderColor: .sesacGray7, borderWidth: 0.5, cornerRadius: 8)
         self.setTitle(text, for: .normal)
         self.setTitleColor(.sesacGray3, for: .normal)
-        self.setBackgroundColor(.sesacGray7!, for: .normal)
+        self.setBackgroundColor(.sesacGray7, for: .normal)
         self.titleLabel?.font = .body3_R14
     }
     
