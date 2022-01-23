@@ -11,7 +11,7 @@ import UIKit
 extension UIButton {
     
     func inactive(text: String) {
-        self.isEnabled = false
+        //self.isEnabled = false
         self.setBorderColorAndRadius(borderColor: .sesacGray4, borderWidth: 0.5, cornerRadius: 8)
         self.setTitle(text, for: .normal)
         self.setTitleColor(.sesacBlack, for: .normal)
@@ -20,7 +20,7 @@ extension UIButton {
     }
     
     func fill(text: String) {
-        self.isEnabled = true
+        //self.isEnabled = true
         self.setBorderColorAndRadius(borderColor: .sesacGreen, borderWidth: 0.5, cornerRadius: 8)
         self.setTitle(text, for: .normal)
         self.setTitleColor(.white, for: .normal)
@@ -29,7 +29,7 @@ extension UIButton {
     }
     
     func outline(text: String) {
-        self.isEnabled = true
+        //self.isEnabled = true
         self.setBorderColorAndRadius(borderColor: .sesacGreen, borderWidth: 0.5, cornerRadius: 8)
         self.setTitle(text, for: .normal)
         self.setTitleColor(.sesacGreen, for: .normal)
@@ -38,7 +38,7 @@ extension UIButton {
     }
     
     func cancel(text: String) {
-        self.isEnabled = true
+        //self.isEnabled = true
         self.setBorderColorAndRadius(borderColor: .sesacGray2, borderWidth: 0.5, cornerRadius: 8)
         self.setTitle(text, for: .normal)
         self.setTitleColor(.sesacBlack, for: .normal)
@@ -47,7 +47,7 @@ extension UIButton {
     }
     
     func disable(text: String) {
-        self.isEnabled = false
+        //self.isEnabled = false
         self.setBorderColorAndRadius(borderColor: .sesacGray7, borderWidth: 0.5, cornerRadius: 8)
         self.setTitle(text, for: .normal)
         self.setTitleColor(.sesacGray3, for: .normal)
