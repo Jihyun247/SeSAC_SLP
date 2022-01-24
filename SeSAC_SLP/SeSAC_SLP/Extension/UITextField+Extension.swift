@@ -15,10 +15,6 @@ extension UITextField {
         self.leftView = paddingView
         self.leftViewMode = ViewMode.always
     }
-
-}
-
-extension UITextField {
     
     func formatPhoneNumber(range: NSRange, string: String) {
         
@@ -37,4 +33,24 @@ extension UITextField {
         self.selectedTextRange = self.textRange(from: position, to: position)
 
     }
+    
+    func setDatePicker(target: Any, selector: Selector, datePicker: UIDatePicker) {
+        
+        datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .wheels
+        self.inputView = datePicker
+        
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancel = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: #selector(tapCancel))
+        let barButton = UIBarButtonItem(title: "Done", style: .plain, target: target, action: selector)
+        toolBar.setItems([cancel, flexible, barButton], animated: false)
+        self.inputAccessoryView = toolBar
+        
+    }
+    @objc func tapCancel() {
+        self.resignFirstResponder()
+    }
+
 }
