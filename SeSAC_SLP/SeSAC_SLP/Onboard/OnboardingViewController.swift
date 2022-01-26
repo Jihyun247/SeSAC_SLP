@@ -45,7 +45,7 @@ class OnboardingViewController: UIViewController {
         let rootVC = UINavigationController(rootViewController: PhoneNumViewController())
         rootVC.modalPresentationStyle = .fullScreen
         self.present(rootVC, animated: true) {
-            UserDefaults.standard.set(true, forKey: "beforeAuth")
+            UserDefaults.beforeAuth = true
         }
     }
     
