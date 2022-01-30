@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B802DF8A279FBE940034D12D /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B802DF89279FBE940034D12D /* GenericResponse.swift */; };
 		B802DF8C279FC5E80034D12D /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B802DF8B279FC5E80034D12D /* HTTPStatusCode.swift */; };
 		B802DF92279FD78B0034D12D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B802DF91279FD78B0034D12D /* User.swift */; };
 		B802DF94279FDA340034D12D /* SimpleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B802DF93279FDA340034D12D /* SimpleData.swift */; };
@@ -31,6 +30,7 @@
 		B80A0C5627971C1C004E1BB3 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80A0C5527971C1C004E1BB3 /* UIButton+Extension.swift */; };
 		B80A0C5827971CC0004E1BB3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80A0C5727971CC0004E1BB3 /* UIView+Extension.swift */; };
 		B80A0C5A279720C2004E1BB3 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80A0C59279720C2004E1BB3 /* CustomTextField.swift */; };
+		B824561327A65D91005C6905 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B824561227A65D91005C6905 /* AuthResponse.swift */; };
 		B8452E7D27A3C51A00C9BC06 /* MyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8452E7C27A3C51A00C9BC06 /* MyInfoView.swift */; };
 		B8452E7F27A3C53400C9BC06 /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8452E7E27A3C53400C9BC06 /* MyInfoViewController.swift */; };
 		B8452E8127A3C55500C9BC06 /* MyInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8452E8027A3C55500C9BC06 /* MyInfoViewModel.swift */; };
@@ -84,7 +84,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B802DF89279FBE940034D12D /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 		B802DF8B279FC5E80034D12D /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
 		B802DF91279FD78B0034D12D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B802DF93279FDA340034D12D /* SimpleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleData.swift; sourceTree = "<group>"; };
@@ -103,6 +102,7 @@
 		B80A0C5527971C1C004E1BB3 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		B80A0C5727971CC0004E1BB3 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B80A0C59279720C2004E1BB3 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		B824561227A65D91005C6905 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		B8452E7C27A3C51A00C9BC06 /* MyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoView.swift; sourceTree = "<group>"; };
 		B8452E7E27A3C53400C9BC06 /* MyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewController.swift; sourceTree = "<group>"; };
 		B8452E8027A3C55500C9BC06 /* MyInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewModel.swift; sourceTree = "<group>"; };
@@ -274,7 +274,6 @@
 				B80A0C4D27970808004E1BB3 /* APIService.swift */,
 				B80A0C4F2797080F004E1BB3 /* APITarget.swift */,
 				B87757F2279C7C730009E2D2 /* NetworkResult.swift */,
-				B802DF89279FBE940034D12D /* GenericResponse.swift */,
 				B802DF8B279FC5E80034D12D /* HTTPStatusCode.swift */,
 				B802DF93279FDA340034D12D /* SimpleData.swift */,
 			);
@@ -527,6 +526,7 @@
 			isa = PBXGroup;
 			children = (
 				B8747A97279E539E00FF90AD /* Gender.swift */,
+				B824561227A65D91005C6905 /* AuthResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -733,7 +733,6 @@
 				B8747A8C279E4A6E00FF90AD /* EmailViewModel.swift in Sources */,
 				B802DF8C279FC5E80034D12D /* HTTPStatusCode.swift in Sources */,
 				B8A54DDB27A17F69005DB56F /* MainShopViewController.swift in Sources */,
-				B802DF8A279FBE940034D12D /* GenericResponse.swift in Sources */,
 				B8A54DCD27A171A8005DB56F /* MainMapViewController.swift in Sources */,
 				B80A0C3D2796CC22004E1BB3 /* UILabel+Extension.swift in Sources */,
 				B80A0C28279696F8004E1BB3 /* MessageViewController.swift in Sources */,
@@ -745,6 +744,7 @@
 				B8EDF6722795C84F0007DD67 /* SeSAC_SLP.xcdatamodeld in Sources */,
 				B8A54DDD27A17F8F005DB56F /* MainFriendsViewController.swift in Sources */,
 				B8519B02279AE35C0054D7B8 /* AuthViewModel.swift in Sources */,
+				B824561327A65D91005C6905 /* AuthResponse.swift in Sources */,
 				B80A0C4E27970808004E1BB3 /* APIService.swift in Sources */,
 				B8747A8A279E49CD00FF90AD /* BirthViewModel.swift in Sources */,
 				B80A0C5427971C14004E1BB3 /* UnderlineTextField+Extension.swift in Sources */,

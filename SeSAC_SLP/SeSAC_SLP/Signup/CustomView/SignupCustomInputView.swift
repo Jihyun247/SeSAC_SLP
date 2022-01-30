@@ -11,7 +11,8 @@ import SnapKit
 
 // MARK: - 회원가입 중간 input view custom
 
-class AuthTextField: UIView {
+// 아직 언더라인
+class AuthInputView: UIView {
     
     var limitTime: Int = 300
     var timer = Timer()
@@ -100,7 +101,8 @@ class AuthTextField: UIView {
     }
 }
 
-class BirthTextField: UIView {
+// 언더라인 텍스트필드가 더 적절할듯
+class BirthInputView: UIView {
     
     let stackView = UIStackView()
     
@@ -111,6 +113,10 @@ class BirthTextField: UIView {
     let yearLabel = UILabel()
     let monthLabel = UILabel()
     let dayLabel = UILabel()
+    
+    let datePicker: UIDatePicker = {
+        return UIDatePicker(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 216))
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -124,11 +130,19 @@ class BirthTextField: UIView {
         constraints()
     }
     
+    @objc func setDate() {
+        self.endEditing(true)
+    }
+    
     func setup() {
         
-        [yearTextField, monthTextField, dayTextField].forEach { $0.keyboardType = .numberPad }
+        //[yearTextField, monthTextField, dayTextField].forEach { $0.keyboardType = .numberPad }
         
         yearTextField.becomeFirstResponder()
+        
+        [yearTextField, monthTextField, dayTextField].forEach {
+            $0.setDatePicker(target: self, selector: #selector(setDate), datePicker: datePicker)
+        }
         
         yearTextField.setBasic(placeholder: "1990", leftPadding: 12)
         monthTextField.setBasic(placeholder: "1", leftPadding: 12)
@@ -182,8 +196,8 @@ class BirthTextField: UIView {
 
 class GenderInputView: UIView {
     
-    let manButton = LabelUnderImgButton()
-    let womanButton = LabelUnderImgButton()
+    let manButton = LabelUnderImgButton(image: UIImage(named: "man")!, title: "남자")
+    let womanButton = LabelUnderImgButton(image: UIImage(named: "woman")!, title: "여자")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
