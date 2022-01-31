@@ -49,11 +49,10 @@ class EmailViewController: UIViewController {
         let input = EmailViewModel.Input(email: mainView.textfield.rx.text, tap: mainView.button.rx.tap)
         let output = viewModel.transform(input: input)
         
-        // 유효해지는 순간 버튼 to green
         output.emailValidStatus
             .subscribe { status in
                 if let valid = status.element, valid {
-                    self.mainView.textfield.errorMessage = "" // 그냥 "" 하면 에러 없어짐
+                    self.mainView.textfield.errorMessage = ""
                     self.mainView.button.fill(text: "다음")
                     
                 }  else {

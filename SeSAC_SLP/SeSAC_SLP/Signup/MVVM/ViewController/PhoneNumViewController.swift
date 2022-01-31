@@ -11,8 +11,6 @@ import RxSwift
 import Toast
 import FirebaseAuth
 
-// input output 적용 x
-
 class PhoneNumViewController: UIViewController {
     
     // MARK: - 인스턴스
@@ -26,6 +24,7 @@ class PhoneNumViewController: UIViewController {
     
     let mainView = SignupView(viewType: .phonenum)
     let viewModel = PhoneNumViewModel()
+    let httpViewModel = SignupHTTPViewModel()
     
     let disposeBag = DisposeBag()
     
@@ -57,12 +56,12 @@ class PhoneNumViewController: UIViewController {
         self.mainView.button.rx.tap
             .subscribe { _ in
                 
-                self.viewModel.getVerifyCode(number: self.mainView.textfield.text ?? "") { result in
+                self.httpViewModel.getVerifyCode(number: self.mainView.textfield.text ?? "") { result in
 
                     switch result {
                     case .success:
                         let vc = AuthViewController()
-                        vc.viewModel.verifyCode.accept(self.viewModel.verifyCode.value)
+                        vc.httpViewModel.verifyCode.accept(self.viewModel.verifyCode.value)
                         vc.viewModel.phoneNum.accept(self.mainView.textfield.text ?? "")
                         self.navigationController?.pushViewController(vc, animated: true)
                         

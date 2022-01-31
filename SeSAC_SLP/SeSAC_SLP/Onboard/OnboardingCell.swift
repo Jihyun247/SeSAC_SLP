@@ -69,7 +69,8 @@ class OnboardingCell: UICollectionViewCell {
         }
         
         imageView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(8)
+            make.centerX.equalToSuperview()
+            make.size.equalTo(360*deviceHeightRatio)
             make.bottom.equalToSuperview()
         }
     }

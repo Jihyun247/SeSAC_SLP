@@ -26,6 +26,7 @@ class AuthViewController: UIViewController {
     
     let mainView = SignupView(viewType: .auth)
     let viewModel = AuthViewModel()
+    let httpViewModel = SignupHTTPViewModel()
     
     let disposeBag = DisposeBag()
     
@@ -38,7 +39,7 @@ class AuthViewController: UIViewController {
         
         navigationItem.backBarButtonItem = .basicBackButton(target: self)
         self.view.makeToast("인증번호를 보냈습니다", duration: 1.0, position: .center, style: self.style)
-        print(self.viewModel.verifyCode.value)
+        print(self.httpViewModel.verifyCode.value)
         binding()
     }
     
@@ -62,18 +63,20 @@ class AuthViewController: UIViewController {
         
         output.verifyCodeStart
             .subscribe { _ in
-                // 버튼 활성화 안되어잇을때 토스트
-                //if self.viewModel.
-                self.viewModel.postVerifyCode(inputCode: self.mainView.authInputView.textfield.text ?? "")
+                if self.viewModel.valid.value == true {
+                    self.httpViewModel.postVerifyCode(inputCode: self.mainView.authInputView.textfield.text ?? "")
+                } else {
+                    self.view.makeToast("전화번호 인증 실패", duration: 1.0, position: .center, style: self.style)
+                }
             }
             .disposed(by: disposeBag)
         
-        viewModel.postVerifyCodeResult
+        httpViewModel.postVerifyCodeResult
             .subscribe { result in
                 switch result.element {
                 case .success(_):
-                    self.viewModel.getFirebaseToken()
-                case .fail:
+                    self.httpViewModel.getFirebaseToken()
+                case .failure(_):
                     self.view.makeToast("전화번호 인증 실패", duration: 1.0, position: .center, style: self.style)
                 case .none:
                     print("none")
@@ -81,12 +84,12 @@ class AuthViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        viewModel.getFirebaseTokenResult
+        httpViewModel.getFirebaseTokenResult
             .subscribe { result in
                 switch result.element {
                 case .success(_):
-                    self.viewModel.login()
-                case .fail:
+                    self.httpViewModel.login()
+                case .failure(_):
                     self.view.makeToast("에러가 발생했습니다. 잠시 후 다시 시도해주세요", duration: 1.0, position: .center, style: self.style)
                 case .none:
                     print("none")
@@ -94,7 +97,7 @@ class AuthViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        viewModel.loginResult
+        httpViewModel.loginResult
             .subscribe { result in
                 switch result.element {
                 case .member:
@@ -115,29 +118,26 @@ class AuthViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        
+        output.resendVerifyCode
+            .subscribe { _ in
+                
+                self.httpViewModel.getVerifyCode(number: self.mainView.textfield.text ?? "") { result in
 
-        // 재전송 누를 시 다시 인증 문자 요청 함수 호출 !
-//        self.mainView.authInputView.resendButton.rx.tap
-//            .subscribe { text in
-//
-//                self.viewModel.getVerifyCode(number: self.viewModel.phoneNum.value) { result in
-//
-//                    switch result {
-//                    case .success:
-//                        self.mainView.authInputView.start(reset: true) // 타이머 리셋
-//                        self.view.makeToast("메세지를 재전송 합니다.", duration: 1.0, position: .center, style: self.style)
-//                        self.mainView.authInputView.textfield.text = ""
-//
-//                    case .error:
-//                        self.view.makeToast("에러가 발생했습니다. 다시 시도해주세요", duration: 1.0, position: .center, style: self.style)
-//
-//                    case .overAccess:
-//                        self.view.makeToast("과도한 인증 시도가 있었습니다. 나중에 다시 시도해 주세요", duration: 1.0, position: .center, style: self.style)
-//                    }
-//                }
-//            }
-//            .disposed(by: disposeBag)
+                    switch result {
+                    case .success:
+                        self.mainView.authInputView.start(reset: true) // 타이머 리셋
+                        self.view.makeToast("메세지를 재전송 합니다.", duration: 1.0, position: .center, style: self.style)
+                        self.mainView.authInputView.textfield.text = ""
+
+                    case .error:
+                        self.view.makeToast("에러가 발생했습니다. 다시 시도해주세요", duration: 1.0, position: .center, style: self.style)
+
+                    case .overAccess:
+                        self.view.makeToast("과도한 인증 시도가 있었습니다. 나중에 다시 시도해 주세요", duration: 1.0, position: .center, style: self.style)
+                    }
+                }
+            }
+            .disposed(by: disposeBag)
     }
 
 }

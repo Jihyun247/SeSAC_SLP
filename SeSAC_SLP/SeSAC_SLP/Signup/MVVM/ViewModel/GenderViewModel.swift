@@ -76,12 +76,4 @@ class GenderViewModel: ViewModel {
 
         return Output(isWomanSelected: isWomanSelected.asObservable(), isManSelected: isManSelected.asObservable(), leastOneSelected: leastOne, gender: gender, sceneTransition: input.nextTap)
     }
-    
-    func signup(completion: @escaping () -> Void) {
-        APIService.shared.signup {
-//            APIService.shared.login { login in
-//                login ? completion() : print("로그인실패")
-//            }
-        }
-    }
 }

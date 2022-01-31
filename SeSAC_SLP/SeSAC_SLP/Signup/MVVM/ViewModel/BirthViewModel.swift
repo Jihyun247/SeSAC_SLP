@@ -17,7 +17,7 @@ class BirthViewModel: ViewModel {
     var valid = BehaviorRelay<Bool>(value: false)
     
     struct Input {
-        let birthday: ControlProperty<Date> // birthday를 옵저버로 하니까
+        let birthday: ControlProperty<Date>
         let tap: ControlEvent<Void>
     }
 

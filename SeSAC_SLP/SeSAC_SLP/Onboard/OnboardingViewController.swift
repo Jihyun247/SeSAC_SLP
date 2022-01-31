@@ -88,7 +88,7 @@ class OnboardingViewController: UIViewController {
         
         startButton.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(48 * deviceHeightRatio)
+            make.height.equalTo(48)
             make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-20)
         }
     }

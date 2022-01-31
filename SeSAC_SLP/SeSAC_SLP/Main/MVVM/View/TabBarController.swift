@@ -24,7 +24,7 @@ class TabBarController: UITabBarController {
         thirdVC.tabBarItem = UITabBarItem(title: "새싹친구", image: UIImage(systemName: "friends"), selectedImage: UIImage(systemName: "friends.act"))
         let thirdNVC = UINavigationController(rootViewController: thirdVC)
         
-        let fourthVC = MypageViewController()
+        let fourthVC = MyInfoViewController()
         fourthVC.tabBarItem = UITabBarItem(title: "내정보", image: UIImage(systemName: "mypage"), selectedImage: UIImage(systemName: "mypage.act"))
         let fourthNVC = UINavigationController(rootViewController: fourthVC)
         

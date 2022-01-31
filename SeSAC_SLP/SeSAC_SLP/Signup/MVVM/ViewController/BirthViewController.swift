@@ -68,7 +68,7 @@ class BirthViewController: UIViewController {
                 if self.viewModel.valid.value == true {
                     UserDefaults.birthday = self.mainView.birthInputView.datePicker.date.getBitrydayString()
                     UserDefaults.age = self.viewModel.age.value
-                    // 뷰 전환
+
                     self.navigationController?.pushViewController(EmailViewController(), animated: true)
                 } else {
                     self.view.makeToast("새싹친구는 만 17세 이상만 사용할 수 있습니다", duration: 1.0, position: .center, style: self.style)

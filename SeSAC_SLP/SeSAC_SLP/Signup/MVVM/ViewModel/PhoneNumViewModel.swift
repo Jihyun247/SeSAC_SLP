@@ -50,28 +50,4 @@ class PhoneNumViewModel: ViewModel {
     
     // Observable은 단순 하나의 함수라고 생각하면 편함
     // Subject 및 Relay는 자주 변경되는 데이터 및 여러 옵저버에 의해 관찰당하는 데이터에 용이
-
-    
-    func getVerifyCode(number: String, completion: @escaping (SendResult) -> Void) {
-        
-        Auth.auth().languageCode = "ko"
-        
-        PhoneAuthProvider.provider().verifyPhoneNumber("+82\(number)", uiDelegate: nil) { verification, error in
-            
-            if let verification = verification, error == nil {
-                var phoneNum = number.components(separatedBy: ["-"]).joined()
-                print("+82\(phoneNum.removeFirst())")
-                UserDefaults.phoneNumber = "+82\(phoneNum.removeFirst())"
-                self.verifyCode.accept(verification)
-                completion(.success)
-                
-            } else if verification == nil {
-
-                print("verification code is nil")
-                print("Phone Verification Error: \(error!.localizedDescription) ")
-                
-                error!.localizedDescription == "We have blocked all requests from this device due to unusual activity. Try again later." ? completion(.overAccess) : completion(.error)
-            }
-        }
-    }
 }

@@ -13,6 +13,7 @@ class GenderViewController: UIViewController {
     
     let mainView = SignupView(viewType: .gender)
     let viewModel = GenderViewModel()
+    let httpViewModel = SignupHTTPViewModel()
     
     let disposeBag = DisposeBag()
     
@@ -65,9 +66,29 @@ class GenderViewController: UIViewController {
                     .subscribe { UserDefaults.gender = $0.element?.rawValue ?? -1
                     }
                     .disposed(by: self.disposeBag)
-                // 회원가입
-                self.viewModel.signup {
-                    self.navigationController?.pushViewController(TabBarController(), animated: true)
+
+                self.httpViewModel.signup()
+            }
+            .disposed(by: disposeBag)
+        
+        self.httpViewModel.signupResult
+            .subscribe { result in
+                switch result.element {
+                case .success:
+                    DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                        let vc = TabBarController()
+                        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {return}
+                        windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: vc)
+                        windowScene.windows.first?.makeKeyAndVisible()
+                    }
+                case .alreadyUser:
+                    print("")
+                case .cantUseNickname:
+                    print("")
+                case .fail:
+                    print("")
+                case .none:
+                    print("")
                 }
             }
             .disposed(by: disposeBag)

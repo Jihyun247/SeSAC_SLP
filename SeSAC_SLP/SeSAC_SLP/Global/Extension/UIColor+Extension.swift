@@ -10,7 +10,7 @@ import UIKit
 
 extension UIColor {
     
-    class var sesacBlack: UIColor { return UIColor(named: "Black") ?? .black}
+    class var sesacBlack: UIColor { return UIColor(named: "Sesac_Black") ?? .black}
     
     class var sesacGreen: UIColor { return UIColor(named: "Green") ?? .green}
     class var sesacWhiteGreen: UIColor { return UIColor(named: "WhiteGreen") ?? .green}

@@ -47,7 +47,6 @@ extension UIButton {
     }
     
     func disable(text: String) {
-        print("엥?")
         //self.isEnabled = false
         self.setBorderColorAndRadius(borderColor: .clear, borderWidth: 0, cornerRadius: 8)
         self.setTitle(text, for: .normal)

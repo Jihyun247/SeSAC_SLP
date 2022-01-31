@@ -19,7 +19,7 @@ enum HTTPStatusCode: Int {
 }
 
 // 회원가입
-enum SigninStatusCode: Int {
+enum SignupStatusCode: Int {
     case ALREADY_SIGNIN = 201
     case CANT_USE_NICKNAME = 202
 }

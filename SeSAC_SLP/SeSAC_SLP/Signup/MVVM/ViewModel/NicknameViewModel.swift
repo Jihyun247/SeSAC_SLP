@@ -9,8 +9,6 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-// Input Output 구조 적용
-
 class NicknameViewModel: ViewModel {
     
     var disposeBag = DisposeBag()

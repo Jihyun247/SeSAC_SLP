@@ -43,7 +43,6 @@ class NicknameViewController: UIViewController {
         let input = NicknameViewModel.Input(nickname: mainView.textfield.rx.text, tap: mainView.button.rx.tap)
         let output = viewModel.transform(input: input)
         
-        // 유효해지는 순간 버튼 to green
         output.nickValidStatus
             .subscribe { status in
                 if let valid = status.element, valid {

@@ -30,7 +30,6 @@
 		B80A0C5627971C1C004E1BB3 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80A0C5527971C1C004E1BB3 /* UIButton+Extension.swift */; };
 		B80A0C5827971CC0004E1BB3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80A0C5727971CC0004E1BB3 /* UIView+Extension.swift */; };
 		B80A0C5A279720C2004E1BB3 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80A0C59279720C2004E1BB3 /* CustomTextField.swift */; };
-		B824561327A65D91005C6905 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B824561227A65D91005C6905 /* AuthResponse.swift */; };
 		B8452E7D27A3C51A00C9BC06 /* MyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8452E7C27A3C51A00C9BC06 /* MyInfoView.swift */; };
 		B8452E7F27A3C53400C9BC06 /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8452E7E27A3C53400C9BC06 /* MyInfoViewController.swift */; };
 		B8452E8127A3C55500C9BC06 /* MyInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8452E8027A3C55500C9BC06 /* MyInfoViewModel.swift */; };
@@ -50,9 +49,11 @@
 		B8747A8C279E4A6E00FF90AD /* EmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8747A8B279E4A6E00FF90AD /* EmailViewModel.swift */; };
 		B8747A8E279E4A9F00FF90AD /* GenderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8747A8D279E4A9F00FF90AD /* GenderViewModel.swift */; };
 		B8747A96279E511600FF90AD /* UserDefault+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8747A95279E511600FF90AD /* UserDefault+Extension.swift */; };
-		B8747A98279E539E00FF90AD /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8747A97279E539E00FF90AD /* Gender.swift */; };
 		B8747A9A279EAA4300FF90AD /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8747A99279EAA4300FF90AD /* Date+Extension.swift */; };
 		B87757F3279C7C730009E2D2 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87757F2279C7C730009E2D2 /* NetworkResult.swift */; };
+		B87D42D627A76037002D528D /* SignupHTTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87D42D527A76037002D528D /* SignupHTTPViewModel.swift */; };
+		B87D42D927A76C80002D528D /* CommonUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87D42D827A76C80002D528D /* CommonUtility.swift */; };
+		B87D42DB27A76E92002D528D /* SignupCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87D42DA27A76E92002D528D /* SignupCase.swift */; };
 		B87F672E279626A400A30366 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B87F672D279626A400A30366 /* FirebaseAnalytics */; };
 		B87F6730279626A400A30366 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B87F672F279626A400A30366 /* FirebaseAuth */; };
 		B87F6732279626A400A30366 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B87F6731279626A400A30366 /* FirebaseCrashlytics */; };
@@ -102,7 +103,6 @@
 		B80A0C5527971C1C004E1BB3 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		B80A0C5727971CC0004E1BB3 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B80A0C59279720C2004E1BB3 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		B824561227A65D91005C6905 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		B8452E7C27A3C51A00C9BC06 /* MyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoView.swift; sourceTree = "<group>"; };
 		B8452E7E27A3C53400C9BC06 /* MyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewController.swift; sourceTree = "<group>"; };
 		B8452E8027A3C55500C9BC06 /* MyInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewModel.swift; sourceTree = "<group>"; };
@@ -120,9 +120,11 @@
 		B8747A8B279E4A6E00FF90AD /* EmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewModel.swift; sourceTree = "<group>"; };
 		B8747A8D279E4A9F00FF90AD /* GenderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewModel.swift; sourceTree = "<group>"; };
 		B8747A95279E511600FF90AD /* UserDefault+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+Extension.swift"; sourceTree = "<group>"; };
-		B8747A97279E539E00FF90AD /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		B8747A99279EAA4300FF90AD /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		B87757F2279C7C730009E2D2 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		B87D42D527A76037002D528D /* SignupHTTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupHTTPViewModel.swift; sourceTree = "<group>"; };
+		B87D42D827A76C80002D528D /* CommonUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtility.swift; sourceTree = "<group>"; };
+		B87D42DA27A76E92002D528D /* SignupCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCase.swift; sourceTree = "<group>"; };
 		B8A54DCA27A16FFE005DB56F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B8A54DCC27A171A8005DB56F /* MainMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewController.swift; sourceTree = "<group>"; };
 		B8A54DDA27A17F69005DB56F /* MainShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainShopViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 		B802DF8F279FD73E0034D12D /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				B87D42D727A76C6A002D528D /* Utility */,
 				B802DF90279FD77E0034D12D /* Model */,
 				B80A0C342796C202004E1BB3 /* Extension */,
 				B8CB92BE279D3F8B0062EDDE /* Protocols */,
@@ -356,6 +359,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B87D42D727A76C6A002D528D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				B87D42D827A76C80002D528D /* CommonUtility.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		B8A54DCE27A17ED4005DB56F /* Shop */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,8 +536,7 @@
 		B8F36F632798E1630088628B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B8747A97279E539E00FF90AD /* Gender.swift */,
-				B824561227A65D91005C6905 /* AuthResponse.swift */,
+				B87D42DA27A76E92002D528D /* SignupCase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -540,6 +550,7 @@
 				B8747A89279E49CD00FF90AD /* BirthViewModel.swift */,
 				B8747A8B279E4A6E00FF90AD /* EmailViewModel.swift */,
 				B8747A8D279E4A9F00FF90AD /* GenderViewModel.swift */,
+				B87D42D527A76037002D528D /* SignupHTTPViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -705,7 +716,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8F36F692798E2070088628B /* AuthViewController.swift in Sources */,
+				B87D42D627A76037002D528D /* SignupHTTPViewModel.swift in Sources */,
 				B80A0C3B2796C61E004E1BB3 /* UIFont+Extension.swift in Sources */,
+				B87D42D927A76C80002D528D /* CommonUtility.swift in Sources */,
 				B8747A9A279EAA4300FF90AD /* Date+Extension.swift in Sources */,
 				B8A54DCB27A16FFE005DB56F /* TabBarController.swift in Sources */,
 				B8FEABBB27980AF300441440 /* UIBarButton+Extension.swift in Sources */,
@@ -744,7 +757,7 @@
 				B8EDF6722795C84F0007DD67 /* SeSAC_SLP.xcdatamodeld in Sources */,
 				B8A54DDD27A17F8F005DB56F /* MainFriendsViewController.swift in Sources */,
 				B8519B02279AE35C0054D7B8 /* AuthViewModel.swift in Sources */,
-				B824561327A65D91005C6905 /* AuthResponse.swift in Sources */,
+				B87D42DB27A76E92002D528D /* SignupCase.swift in Sources */,
 				B80A0C4E27970808004E1BB3 /* APIService.swift in Sources */,
 				B8747A8A279E49CD00FF90AD /* BirthViewModel.swift in Sources */,
 				B80A0C5427971C14004E1BB3 /* UnderlineTextField+Extension.swift in Sources */,
@@ -755,7 +768,6 @@
 				B8F36F6D27990B9F0088628B /* BirthViewController.swift in Sources */,
 				B80A0C372796C4DE004E1BB3 /* UIColor+Extension.swift in Sources */,
 				B80A0C5A279720C2004E1BB3 /* CustomTextField.swift in Sources */,
-				B8747A98279E539E00FF90AD /* Gender.swift in Sources */,
 				B8FEABBD27980C9B00441440 /* UINavigationBar+Extension.swift in Sources */,
 				B802DF92279FD78B0034D12D /* User.swift in Sources */,
 			);
