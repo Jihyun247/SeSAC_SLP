@@ -16,16 +16,40 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logo" translatesAutoresizingMaskIntoConstraints="NO" id="4M3-Zd-CYR">
+                                <rect key="frame" x="78" y="172" width="219" height="265"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4M3-Zd-CYR" secondAttribute="height" multiplier="219:265" id="teX-dy-kD7"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_text" translatesAutoresizingMaskIntoConstraints="NO" id="2Qt-Xs-pLg">
+                                <rect key="frame" x="41" y="454" width="293" height="101.33333333333337"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2Qt-Xs-pLg" secondAttribute="height" multiplier="292:101" id="wLM-Rb-spV"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2Qt-Xs-pLg" firstAttribute="top" secondItem="4M3-Zd-CYR" secondAttribute="bottom" constant="17" id="09C-zT-har"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Qt-Xs-pLg" secondAttribute="trailing" constant="41" id="BaG-09-C8O"/>
+                            <constraint firstItem="4M3-Zd-CYR" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.75" id="Dfa-3l-rAU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4M3-Zd-CYR" secondAttribute="trailing" constant="78" id="Kqc-ZJ-ro6"/>
+                            <constraint firstItem="4M3-Zd-CYR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="78" id="V4Y-6v-Vww"/>
+                            <constraint firstItem="2Qt-Xs-pLg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="41" id="n9V-gu-YIh"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.6305418719212"/>
         </scene>
     </scenes>
     <resources>
+        <image name="splash_logo" width="219" height="263.66665649414062"/>
+        <image name="splash_text" width="289.33334350585938" height="32.333332061767578"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
