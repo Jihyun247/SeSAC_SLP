@@ -37,9 +37,8 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.backBarButtonItem = .basicBackButton(target: self)
+        navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
         self.view.makeToast("인증번호를 보냈습니다", duration: 1.0, position: .center, style: self.style)
-        print(self.httpViewModel.verifyCode.value)
         binding()
     }
     

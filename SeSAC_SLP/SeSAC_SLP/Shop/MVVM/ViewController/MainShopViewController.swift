@@ -14,13 +14,6 @@ import Toast
 class ShopViewController: UIViewController {
     
     // MARK: - 인스턴스
-    var style: ToastStyle = {
-        var style = ToastStyle()
-        style.backgroundColor = .sesacGray3
-        style.messageColor = .sesacBlack
-        style.messageFont = .body4_R12!
-        return style
-    }()
     
 //    let mainView = SignupView(viewType: .phonenum)
 //    let viewModel = PhoneNumViewModel()
@@ -35,21 +28,12 @@ class ShopViewController: UIViewController {
     // MARK: - viewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationItem.hidesBackButton = true
-        navigationItem.backBarButtonItem = .basicBackButton(target: self)
+        title = "새싹샵"
+        navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
         binding()
     }
     
     // MARK: - 바인딩 (Tap , Button)
     func binding() {
-        
-        self.view.rx.tapGesture()
-            .when(.recognized)
-            .subscribe { _ in
-                self.view.endEditing(true)
-            }
-            .disposed(by: disposeBag)
-
     }
 }

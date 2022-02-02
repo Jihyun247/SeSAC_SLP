@@ -32,6 +32,7 @@ class SignupHTTPViewModel {
                 print("+82\(phoneNum.removeFirst())")
                 UserDefaults.phoneNumber = "+82\(phoneNum.removeFirst())"
                 self.verifyCode.accept(verification)
+                print("인증번호 생성 후 저장 : \(self.verifyCode.value)")
                 completion(.success)
                 
             } else if verification == nil {
@@ -46,6 +47,7 @@ class SignupHTTPViewModel {
     
     func postVerifyCode(inputCode: String) {
 
+        print("credential 생성 직전 verifycode : \(self.verifyCode.value)")
         let credential = PhoneAuthProvider.provider().credential(withVerificationID: verifyCode.value, verificationCode: inputCode)
 
         Auth.auth().signIn(with: credential) { success, error in

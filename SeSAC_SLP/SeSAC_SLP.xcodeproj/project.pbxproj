@@ -30,11 +30,15 @@
 		B80A0C5627971C1C004E1BB3 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80A0C5527971C1C004E1BB3 /* UIButton+Extension.swift */; };
 		B80A0C5827971CC0004E1BB3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80A0C5727971CC0004E1BB3 /* UIView+Extension.swift */; };
 		B80A0C5A279720C2004E1BB3 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80A0C59279720C2004E1BB3 /* CustomTextField.swift */; };
+		B82037CA27AA5AFF00B3BC4A /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82037C927AA5AFF00B3BC4A /* UINavigationController+Extension.swift */; };
+		B82037CE27AA980B00B3BC4A /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82037CD27AA980B00B3BC4A /* CustomTabBar.swift */; };
+		B82037D027AA9B0900B3BC4A /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82037CF27AA9B0900B3BC4A /* MyProfileView.swift */; };
+		B82037D227AA9B1600B3BC4A /* MyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82037D127AA9B1600B3BC4A /* MyProfileViewModel.swift */; };
 		B8452E7D27A3C51A00C9BC06 /* MyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8452E7C27A3C51A00C9BC06 /* MyInfoView.swift */; };
 		B8452E7F27A3C53400C9BC06 /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8452E7E27A3C53400C9BC06 /* MyInfoViewController.swift */; };
 		B8452E8127A3C55500C9BC06 /* MyInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8452E8027A3C55500C9BC06 /* MyInfoViewModel.swift */; };
 		B8452E8427A3C96B00C9BC06 /* MyInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8452E8327A3C96B00C9BC06 /* MyInfoCell.swift */; };
-		B8452E8627A3C97500C9BC06 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8452E8527A3C97500C9BC06 /* MyProfileView.swift */; };
+		B8452E8627A3C97500C9BC06 /* MyProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8452E8527A3C97500C9BC06 /* MyProfileCell.swift */; };
 		B8452E8827A41ABC00C9BC06 /* MyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8452E8727A41ABC00C9BC06 /* MyInfo.swift */; };
 		B8452E8B27A43EB400C9BC06 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = B8452E8A27A43EB400C9BC06 /* RxDataSources */; };
 		B8452E8D27A44FA300C9BC06 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8452E8C27A44FA300C9BC06 /* MyProfileViewController.swift */; };
@@ -103,11 +107,15 @@
 		B80A0C5527971C1C004E1BB3 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		B80A0C5727971CC0004E1BB3 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B80A0C59279720C2004E1BB3 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		B82037C927AA5AFF00B3BC4A /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
+		B82037CD27AA980B00B3BC4A /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		B82037CF27AA9B0900B3BC4A /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
+		B82037D127AA9B1600B3BC4A /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
 		B8452E7C27A3C51A00C9BC06 /* MyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoView.swift; sourceTree = "<group>"; };
 		B8452E7E27A3C53400C9BC06 /* MyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewController.swift; sourceTree = "<group>"; };
 		B8452E8027A3C55500C9BC06 /* MyInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewModel.swift; sourceTree = "<group>"; };
 		B8452E8327A3C96B00C9BC06 /* MyInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoCell.swift; sourceTree = "<group>"; };
-		B8452E8527A3C97500C9BC06 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
+		B8452E8527A3C97500C9BC06 /* MyProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileCell.swift; sourceTree = "<group>"; };
 		B8452E8727A41ABC00C9BC06 /* MyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfo.swift; sourceTree = "<group>"; };
 		B8452E8C27A44FA300C9BC06 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		B84F2A0427968BC900D2169C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -183,7 +191,7 @@
 				B802DF90279FD77E0034D12D /* Model */,
 				B80A0C342796C202004E1BB3 /* Extension */,
 				B8CB92BE279D3F8B0062EDDE /* Protocols */,
-				B8FEABB62797DEB100441440 /* CustomView */,
+				B8FEABB62797DEB100441440 /* Custom */,
 				B80A0C352796C210004E1BB3 /* Network */,
 				B80A0C2F2796C1BD004E1BB3 /* Asset */,
 				B80A0C2E2796C1B3004E1BB3 /* Default */,
@@ -233,6 +241,7 @@
 			children = (
 				B8452E8227A3C87200C9BC06 /* Cell */,
 				B8452E7C27A3C51A00C9BC06 /* MyInfoView.swift */,
+				B82037CF27AA9B0900B3BC4A /* MyProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -241,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				B8452E8027A3C55500C9BC06 /* MyInfoViewModel.swift */,
+				B82037D127AA9B1600B3BC4A /* MyProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -267,6 +277,7 @@
 				B8FEABC12798454400441440 /* UITextField+Extension.swift */,
 				B8747A95279E511600FF90AD /* UserDefault+Extension.swift */,
 				B8747A99279EAA4300FF90AD /* Date+Extension.swift */,
+				B82037C927AA5AFF00B3BC4A /* UINavigationController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -296,7 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				B8452E8327A3C96B00C9BC06 /* MyInfoCell.swift */,
-				B8452E8527A3C97500C9BC06 /* MyProfileView.swift */,
+				B8452E8527A3C97500C9BC06 /* MyProfileCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -595,14 +606,15 @@
 			path = MVVM;
 			sourceTree = "<group>";
 		};
-		B8FEABB62797DEB100441440 /* CustomView */ = {
+		B8FEABB62797DEB100441440 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
 				B80A0C59279720C2004E1BB3 /* CustomTextField.swift */,
 				B80A0C3E2796D283004E1BB3 /* CustomUILabel.swift */,
 				B8FEABB42797DDA200441440 /* CustomUIButton.swift */,
+				B82037CD27AA980B00B3BC4A /* CustomTabBar.swift */,
 			);
-			path = CustomView;
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		B8FEABB7279809D100441440 /* ViewController */ = {
@@ -726,6 +738,7 @@
 				B8F36F7127990CDF0088628B /* GenderViewController.swift in Sources */,
 				B8747A8E279E4A9F00FF90AD /* GenderViewModel.swift in Sources */,
 				B8CB92BD279D26630062EDDE /* NicknameViewModel.swift in Sources */,
+				B82037CA27AA5AFF00B3BC4A /* UINavigationController+Extension.swift in Sources */,
 				B8747A96279E511600FF90AD /* UserDefault+Extension.swift in Sources */,
 				B8519AFB279A9B9A0054D7B8 /* OnboardingCell.swift in Sources */,
 				B8EDF6682795C84F0007DD67 /* AppDelegate.swift in Sources */,
@@ -735,7 +748,7 @@
 				B8F36F6B27990B5A0088628B /* NicknameViewController.swift in Sources */,
 				B8FEABC42798467400441440 /* SignupCustomInputView.swift in Sources */,
 				B8452E8127A3C55500C9BC06 /* MyInfoViewModel.swift in Sources */,
-				B8452E8627A3C97500C9BC06 /* MyProfileView.swift in Sources */,
+				B8452E8627A3C97500C9BC06 /* MyProfileCell.swift in Sources */,
 				B8EDF66A2795C84F0007DD67 /* SceneDelegate.swift in Sources */,
 				B8FEABC22798454400441440 /* UITextField+Extension.swift in Sources */,
 				B8452E8827A41ABC00C9BC06 /* MyInfo.swift in Sources */,
@@ -747,6 +760,7 @@
 				B802DF8C279FC5E80034D12D /* HTTPStatusCode.swift in Sources */,
 				B8A54DDB27A17F69005DB56F /* MainShopViewController.swift in Sources */,
 				B8A54DCD27A171A8005DB56F /* MainMapViewController.swift in Sources */,
+				B82037D227AA9B1600B3BC4A /* MyProfileViewModel.swift in Sources */,
 				B80A0C3D2796CC22004E1BB3 /* UILabel+Extension.swift in Sources */,
 				B80A0C28279696F8004E1BB3 /* MessageViewController.swift in Sources */,
 				B80A0C3F2796D283004E1BB3 /* CustomUILabel.swift in Sources */,
@@ -754,9 +768,11 @@
 				B8519AD7279A7A4C0054D7B8 /* OnboardingViewController.swift in Sources */,
 				B8452E7F27A3C53400C9BC06 /* MyInfoViewController.swift in Sources */,
 				B80A0C5827971CC0004E1BB3 /* UIView+Extension.swift in Sources */,
+				B82037CE27AA980B00B3BC4A /* CustomTabBar.swift in Sources */,
 				B8EDF6722795C84F0007DD67 /* SeSAC_SLP.xcdatamodeld in Sources */,
 				B8A54DDD27A17F8F005DB56F /* MainFriendsViewController.swift in Sources */,
 				B8519B02279AE35C0054D7B8 /* AuthViewModel.swift in Sources */,
+				B82037D027AA9B0900B3BC4A /* MyProfileView.swift in Sources */,
 				B87D42DB27A76E92002D528D /* SignupCase.swift in Sources */,
 				B80A0C4E27970808004E1BB3 /* APIService.swift in Sources */,
 				B8747A8A279E49CD00FF90AD /* BirthViewModel.swift in Sources */,

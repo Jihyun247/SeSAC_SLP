@@ -9,7 +9,11 @@ import Foundation
 import UIKit
 
 struct MyInfo {
-    let id: Int
     let iconImage: UIImage
     let labelText: String
+}
+
+struct MySimpleProfile {
+    let profileImage: UIImage
+    let nickname: String
 }

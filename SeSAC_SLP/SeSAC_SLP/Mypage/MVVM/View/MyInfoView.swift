@@ -14,7 +14,7 @@ class MyInfoView: UIView {
     let deviceWidthRatio = UIScreen.main.bounds.width / 375
     let deviceHeightRatio = UIScreen.main.bounds.height / 812
     
-    let profileView = UIView()
+    let profileView = MySimpleProfileCell()
     let tableView = UITableView()
     
     override init(frame: CGRect) {
@@ -29,8 +29,7 @@ class MyInfoView: UIView {
     }
     
     func setup() {
-
-        profileView.addSubview(MyProfileView())
+        
         tableView.register(MyInfoCell.self, forCellReuseIdentifier: MyInfoCell.identifier)
         tableView.separatorColor = .clear
         

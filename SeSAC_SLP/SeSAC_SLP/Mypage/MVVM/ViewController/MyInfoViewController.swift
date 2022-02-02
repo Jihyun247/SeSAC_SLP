@@ -28,14 +28,19 @@ class MyInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "내정보"
-        //navigationItem.hidesBackButton = true
-        navigationItem.backBarButtonItem = .basicBackButton(target: self)
+        navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
         binding()
-        // pop 되어 다시 돌아오면 아무것도 안뜸
     }
     
     // MARK: - 바인딩
     func binding() {
+        
+        viewModel.mySimpleProfile
+            .subscribe { simpleProfile in
+                self.mainView.profileView.profileImageView.image = simpleProfile.element?.profileImage
+                self.mainView.profileView.nicknameLabel.text = simpleProfile.element?.nickname
+            }
+            .disposed(by: disposeBag)
         
         self.mainView.profileView.rx.tapGesture()
             .when(.recognized)

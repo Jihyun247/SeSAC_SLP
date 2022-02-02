@@ -16,8 +16,6 @@ enum SendResult {
 
 class PhoneNumViewModel: ViewModel {
     
-    var verifyCode = BehaviorRelay<String>(value: "")
-    
     struct Input {
         let phoneNum: ControlProperty<String?>
     }

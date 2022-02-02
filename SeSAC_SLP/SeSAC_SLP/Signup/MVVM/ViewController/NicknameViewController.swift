@@ -25,8 +25,7 @@ class NicknameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.backBarButtonItem = .basicBackButton(target: self)
-        
+        navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
         binding()
     }
     

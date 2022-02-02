@@ -23,9 +23,8 @@ class GenderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("fcmToken : \(UserDefaults.fcmToken)")
-        navigationItem.backBarButtonItem = .basicBackButton(target: self)
         
+        navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
         binding()
     }
     

@@ -14,14 +14,14 @@ import RxGesture
 class MyProfileViewController: UIViewController {
     
     // MARK: - 인스턴스
-    //let mainView = MyInfoView()
+    let mainView = MyInfoView()
     //let viewModel = MyInfoViewModel()
     
     let disposeBag = DisposeBag()
     
     // MARK: - loadView()
     override func loadView() {
-        //self.view = mainView
+        self.view = mainView
     }
     
     // MARK: - viewDidLoad()
@@ -29,8 +29,8 @@ class MyProfileViewController: UIViewController {
         super.viewDidLoad()
         
         title = "정보 관리"
-        //navigationItem.hidesBackButton = true
-        navigationItem.backBarButtonItem = .basicBackButton(target: self)
+        navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
+
         binding()
     }
     

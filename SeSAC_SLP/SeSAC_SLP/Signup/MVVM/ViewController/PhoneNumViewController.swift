@@ -38,8 +38,7 @@ class PhoneNumViewController: UIViewController {
         super.viewDidLoad()
         
         mainView.textfield.delegate = self
-        navigationItem.hidesBackButton = true
-        navigationItem.backBarButtonItem = .basicBackButton(target: self)
+        navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
         binding()
     }
     
@@ -61,7 +60,7 @@ class PhoneNumViewController: UIViewController {
                     switch result {
                     case .success:
                         let vc = AuthViewController()
-                        vc.httpViewModel.verifyCode.accept(self.viewModel.verifyCode.value)
+                        vc.httpViewModel.verifyCode.accept(self.httpViewModel.verifyCode.value)
                         vc.viewModel.phoneNum.accept(self.mainView.textfield.text ?? "")
                         self.navigationController?.pushViewController(vc, animated: true)
                         

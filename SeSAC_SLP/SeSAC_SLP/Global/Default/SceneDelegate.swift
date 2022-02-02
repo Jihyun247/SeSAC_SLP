@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window?.backgroundColor = .white
 
         //window?.rootViewController = UINavigationController(rootViewController: OnboardingViewController())
-        window?.rootViewController = OnboardingViewController()
+        window?.rootViewController = TabBarController()
         window?.makeKeyAndVisible()
     }
 

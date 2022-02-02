@@ -1,5 +1,5 @@
 //
-//  MyProfileView.swift
+//  MySimpleProfileCell.swift
 //  SeSAC_SLP
 //
 //  Created by 김지현 on 2022/01/28.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MyProfileView: UIView {
+class MySimpleProfileCell: UIView {
     
     let deviceWidthRatio = UIScreen.main.bounds.width / 375
 
