@@ -14,8 +14,8 @@ import RxGesture
 class MyProfileViewController: UIViewController {
     
     // MARK: - 인스턴스
-    let mainView = MyInfoView()
-    //let viewModel = MyInfoViewModel()
+    let mainView = MyProfileView()
+    let viewModel = MyProfileViewModel()
     
     let disposeBag = DisposeBag()
     
