@@ -9,7 +9,7 @@ import Foundation
 import SnapKit
 import UIKit
 
-enum viewType {
+enum ViewType {
 case phonenum, auth, nickname, birth, email, gender
 }
 
@@ -31,7 +31,7 @@ class SignupView: UIView {
     
     let button = UIButton()
     
-    convenience init(viewType: viewType) {
+    convenience init(viewType: ViewType) {
         self.init(frame: .zero)
         
         setup(viewType: viewType)
@@ -47,7 +47,7 @@ class SignupView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(viewType: viewType? = nil) {
+    func setup(viewType: ViewType? = nil) {
         
         switch viewType {
         case .phonenum:

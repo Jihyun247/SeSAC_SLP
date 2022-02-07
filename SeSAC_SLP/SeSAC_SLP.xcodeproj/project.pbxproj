@@ -42,6 +42,8 @@
 		B8452E8827A41ABC00C9BC06 /* MyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8452E8727A41ABC00C9BC06 /* MyInfo.swift */; };
 		B8452E8B27A43EB400C9BC06 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = B8452E8A27A43EB400C9BC06 /* RxDataSources */; };
 		B8452E8D27A44FA300C9BC06 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8452E8C27A44FA300C9BC06 /* MyProfileViewController.swift */; };
+		B84EBD8727B139A80000A137 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84EBD8627B139A80000A137 /* MapViewModel.swift */; };
+		B84EBD8927B139AE0000A137 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84EBD8827B139AE0000A137 /* MapView.swift */; };
 		B84F2A0527968BC900D2169C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B84F2A0427968BC900D2169C /* GoogleService-Info.plist */; };
 		B8519AD7279A7A4C0054D7B8 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8519AD6279A7A4C0054D7B8 /* OnboardingViewController.swift */; };
 		B8519AFB279A9B9A0054D7B8 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8519AFA279A9B9A0054D7B8 /* OnboardingCell.swift */; };
@@ -49,6 +51,7 @@
 		B8519B00279AE3520054D7B8 /* PhoneNumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8519AFF279AE3520054D7B8 /* PhoneNumViewModel.swift */; };
 		B8519B02279AE35C0054D7B8 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8519B01279AE35C0054D7B8 /* AuthViewModel.swift */; };
 		B8519B0B279B2E730054D7B8 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = B8519B0A279B2E730054D7B8 /* Toast */; };
+		B85ACB6C27AD23CE00F7D8AD /* CustomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85ACB6B27AD23CE00F7D8AD /* CustomCardView.swift */; };
 		B8747A8A279E49CD00FF90AD /* BirthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8747A89279E49CD00FF90AD /* BirthViewModel.swift */; };
 		B8747A8C279E4A6E00FF90AD /* EmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8747A8B279E4A6E00FF90AD /* EmailViewModel.swift */; };
 		B8747A8E279E4A9F00FF90AD /* GenderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8747A8D279E4A9F00FF90AD /* GenderViewModel.swift */; };
@@ -63,7 +66,7 @@
 		B87F6732279626A400A30366 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B87F6731279626A400A30366 /* FirebaseCrashlytics */; };
 		B87F6734279626A400A30366 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = B87F6733279626A400A30366 /* FirebaseMessaging */; };
 		B8A54DCB27A16FFE005DB56F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A54DCA27A16FFE005DB56F /* TabBarController.swift */; };
-		B8A54DCD27A171A8005DB56F /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A54DCC27A171A8005DB56F /* MainMapViewController.swift */; };
+		B8A54DCD27A171A8005DB56F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A54DCC27A171A8005DB56F /* MapViewController.swift */; };
 		B8A54DDB27A17F69005DB56F /* MainShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A54DDA27A17F69005DB56F /* MainShopViewController.swift */; };
 		B8A54DDD27A17F8F005DB56F /* MainFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A54DDC27A17F8F005DB56F /* MainFriendsViewController.swift */; };
 		B8CB92BB279D09E80062EDDE /* SkyFloatingLabelTextField in Frameworks */ = {isa = PBXBuildFile; productRef = B8CB92BA279D09E80062EDDE /* SkyFloatingLabelTextField */; };
@@ -118,12 +121,15 @@
 		B8452E8527A3C97500C9BC06 /* MyProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileCell.swift; sourceTree = "<group>"; };
 		B8452E8727A41ABC00C9BC06 /* MyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfo.swift; sourceTree = "<group>"; };
 		B8452E8C27A44FA300C9BC06 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		B84EBD8627B139A80000A137 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		B84EBD8827B139AE0000A137 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B84F2A0427968BC900D2169C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B84F2A0627968BF000D2169C /* SeSAC_SLP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeSAC_SLP.entitlements; sourceTree = "<group>"; };
 		B8519AD6279A7A4C0054D7B8 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		B8519AFA279A9B9A0054D7B8 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
 		B8519AFF279AE3520054D7B8 /* PhoneNumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumViewModel.swift; sourceTree = "<group>"; };
 		B8519B01279AE35C0054D7B8 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		B85ACB6B27AD23CE00F7D8AD /* CustomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardView.swift; sourceTree = "<group>"; };
 		B8747A89279E49CD00FF90AD /* BirthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthViewModel.swift; sourceTree = "<group>"; };
 		B8747A8B279E4A6E00FF90AD /* EmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewModel.swift; sourceTree = "<group>"; };
 		B8747A8D279E4A9F00FF90AD /* GenderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewModel.swift; sourceTree = "<group>"; };
@@ -134,7 +140,7 @@
 		B87D42D827A76C80002D528D /* CommonUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtility.swift; sourceTree = "<group>"; };
 		B87D42DA27A76E92002D528D /* SignupCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCase.swift; sourceTree = "<group>"; };
 		B8A54DCA27A16FFE005DB56F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		B8A54DCC27A171A8005DB56F /* MainMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewController.swift; sourceTree = "<group>"; };
+		B8A54DCC27A171A8005DB56F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B8A54DDA27A17F69005DB56F /* MainShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainShopViewController.swift; sourceTree = "<group>"; };
 		B8A54DDC27A17F8F005DB56F /* MainFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFriendsViewController.swift; sourceTree = "<group>"; };
 		B8CB92BC279D26630062EDDE /* NicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewModel.swift; sourceTree = "<group>"; };
@@ -343,7 +349,7 @@
 		B8747A91279E4FA000FF90AD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				B8A54DCC27A171A8005DB56F /* MainMapViewController.swift */,
+				B8A54DCC27A171A8005DB56F /* MapViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -351,6 +357,7 @@
 		B8747A92279E4FA800FF90AD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B84EBD8627B139A80000A137 /* MapViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -359,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				B8A54DCA27A16FFE005DB56F /* TabBarController.swift */,
+				B84EBD8827B139AE0000A137 /* MapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -613,6 +621,7 @@
 				B80A0C3E2796D283004E1BB3 /* CustomUILabel.swift */,
 				B8FEABB42797DDA200441440 /* CustomUIButton.swift */,
 				B82037CD27AA980B00B3BC4A /* CustomTabBar.swift */,
+				B85ACB6B27AD23CE00F7D8AD /* CustomCardView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -759,7 +768,7 @@
 				B8747A8C279E4A6E00FF90AD /* EmailViewModel.swift in Sources */,
 				B802DF8C279FC5E80034D12D /* HTTPStatusCode.swift in Sources */,
 				B8A54DDB27A17F69005DB56F /* MainShopViewController.swift in Sources */,
-				B8A54DCD27A171A8005DB56F /* MainMapViewController.swift in Sources */,
+				B8A54DCD27A171A8005DB56F /* MapViewController.swift in Sources */,
 				B82037D227AA9B1600B3BC4A /* MyProfileViewModel.swift in Sources */,
 				B80A0C3D2796CC22004E1BB3 /* UILabel+Extension.swift in Sources */,
 				B80A0C28279696F8004E1BB3 /* MessageViewController.swift in Sources */,
@@ -768,18 +777,21 @@
 				B8519AD7279A7A4C0054D7B8 /* OnboardingViewController.swift in Sources */,
 				B8452E7F27A3C53400C9BC06 /* MyInfoViewController.swift in Sources */,
 				B80A0C5827971CC0004E1BB3 /* UIView+Extension.swift in Sources */,
+				B84EBD8927B139AE0000A137 /* MapView.swift in Sources */,
 				B82037CE27AA980B00B3BC4A /* CustomTabBar.swift in Sources */,
 				B8EDF6722795C84F0007DD67 /* SeSAC_SLP.xcdatamodeld in Sources */,
 				B8A54DDD27A17F8F005DB56F /* MainFriendsViewController.swift in Sources */,
 				B8519B02279AE35C0054D7B8 /* AuthViewModel.swift in Sources */,
 				B82037D027AA9B0900B3BC4A /* MyProfileView.swift in Sources */,
 				B87D42DB27A76E92002D528D /* SignupCase.swift in Sources */,
+				B85ACB6C27AD23CE00F7D8AD /* CustomCardView.swift in Sources */,
 				B80A0C4E27970808004E1BB3 /* APIService.swift in Sources */,
 				B8747A8A279E49CD00FF90AD /* BirthViewModel.swift in Sources */,
 				B80A0C5427971C14004E1BB3 /* UnderlineTextField+Extension.swift in Sources */,
 				B8F36F6F27990BCB0088628B /* EmailViewController.swift in Sources */,
 				B87757F3279C7C730009E2D2 /* NetworkResult.swift in Sources */,
 				B8519B00279AE3520054D7B8 /* PhoneNumViewModel.swift in Sources */,
+				B84EBD8727B139A80000A137 /* MapViewModel.swift in Sources */,
 				B80A0C52279719EA004E1BB3 /* SignupView.swift in Sources */,
 				B8F36F6D27990B9F0088628B /* BirthViewController.swift in Sources */,
 				B80A0C372796C4DE004E1BB3 /* UIColor+Extension.swift in Sources */,
