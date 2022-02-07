@@ -49,8 +49,8 @@ class MapView: UIView {
         case .none:
             print("none")
         }
+        floatingButton.setCircleRadius(frameWidth: floatingButton.frame.width)
         [mapView, floatingButton].forEach { self.addSubview($0) }
-        
     }
     
     func constraints() {

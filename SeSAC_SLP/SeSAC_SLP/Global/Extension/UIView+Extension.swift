@@ -16,4 +16,9 @@ extension UIView {
         self.layer.cornerRadius = cornerRadius
         self.layer.masksToBounds = true
     }
+    
+    func setCircleRadius(frameWidth: CGFloat) {
+        self.layer.cornerRadius = frameWidth/2
+        self.layer.masksToBounds = true
+    }
 }
