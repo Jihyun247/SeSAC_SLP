@@ -17,6 +17,16 @@ extension UIView {
         self.layer.masksToBounds = true
     }
     
+    func setShadowWithRadius(cornerRadius: CGFloat) {
+        self.layer.cornerRadius = cornerRadius
+        self.layer.shadowColor = UIColor.sesacBlack.cgColor
+        self.layer.shadowOpacity = 0.3
+        self.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.layer.shadowRadius = 3
+        //self.clipsToBounds = true
+        
+    }
+    
     func setCircleRadius(frameWidth: CGFloat) {
         self.layer.cornerRadius = frameWidth/2
         self.layer.masksToBounds = true

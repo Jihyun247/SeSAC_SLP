@@ -18,8 +18,12 @@ class MapView: UIView {
     let deviceHeightRatio = UIScreen.main.bounds.height / 812
     
     let mapView = MKMapView()
-    
     let floatingButton = UIButton()
+    let genderStackView = UIStackView()
+    let allGenderButton = UIButton()
+    let menGenderButton = UIButton()
+    let womenGenderButton = UIButton()
+    let currentLocationButton = UIButton()
     
     convenience init(status: MatchingStatus) {
         self.init(frame: .zero)
@@ -50,13 +54,30 @@ class MapView: UIView {
             print("none")
         }
         floatingButton.setCircleRadius(frameWidth: floatingButton.frame.width)
-        [mapView, floatingButton].forEach { self.addSubview($0) }
+        
+        genderStackView.axis = .vertical
+        genderStackView.distribution = .fillEqually
+        genderStackView.setShadowWithRadius(cornerRadius: 8)
+        
+        allGenderButton.fill(text: "전체", radiusStatus: true)
+        allGenderButton.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        menGenderButton.inactive(text: "남자", radiusStatus: false)
+        womenGenderButton.inactive(text: "여자", radiusStatus: true)
+        womenGenderButton.layer.borderWidth = 0
+        womenGenderButton.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        
+        currentLocationButton.setImage(UIImage(named: "place"), for: .normal)
+        currentLocationButton.backgroundColor = .white
+        currentLocationButton.setShadowWithRadius(cornerRadius: 8)
+        
+        [mapView, floatingButton, genderStackView, currentLocationButton].forEach { self.addSubview($0) }
+        [allGenderButton, menGenderButton, womenGenderButton].forEach { genderStackView.addArrangedSubview($0) }
     }
     
     func constraints() {
         
         mapView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalTo(safeAreaLayoutGuide)
         }
         
         floatingButton.snp.makeConstraints { make in
@@ -64,6 +85,34 @@ class MapView: UIView {
             make.bottom.equalTo(safeAreaLayoutGuide).inset(16) // 차이점 한번 보기
             make.size.equalTo(64)
         }
+        
+        genderStackView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(16)
+            make.top.equalTo(safeAreaLayoutGuide).inset(16)
+            make.height.equalTo(144)
+            make.width.equalTo(48)
+        }
+        
+        allGenderButton.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+        }
+        
+        menGenderButton.snp.makeConstraints { make in
+            make.top.equalTo(allGenderButton.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(womenGenderButton.snp.top)
+        }
+        
+        womenGenderButton.snp.makeConstraints { make in
+            make.bottom.leading.trailing.equalToSuperview()
+        }
+        
+        currentLocationButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(16)
+            make.top.equalTo(genderStackView.snp.bottom).offset(16)
+            make.size.equalTo(48)
+        }
+        
         
     }
 }

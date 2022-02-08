@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TabBarController: HeightCustomTabBarController {
+class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
