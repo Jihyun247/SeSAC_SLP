@@ -9,6 +9,7 @@ import Foundation
 
 enum NetworkResult<T> {
     case success(T?)
-    case tokenExpiration(String)
+    case uncommon(Int)
+    case tokenExpiration
     case fail
 }

@@ -98,7 +98,9 @@ class SignupHTTPViewModel {
                 UserDefaults.fcmToken = userData.fcMtoken
                 print("정보저장")
                 self.loginResult.onNext(.member)
-            case .tokenExpiration(_):
+            case .uncommon(let statusCode):
+                print(statusCode)
+            case .tokenExpiration:
                 self.login()
             case .fail:
                 self.loginResult.onNext(.fail)
@@ -111,15 +113,16 @@ class SignupHTTPViewModel {
             
             switch result {
                 
-            case .success(let successCase):
-                if successCase == SignupStatusCode.ALREADY_SIGNIN.rawValue {
+            case .success:
+                self.login()
+                self.signupResult.onNext(.success)
+            case .uncommon(let statusCode):
+                if statusCode == SignupStatusCode.ALREADY_SIGNIN.rawValue {
                     self.signupResult.onNext(.alreadyUser)
-                } else if successCase == SignupStatusCode.CANT_USE_NICKNAME.rawValue {
+                } else if statusCode == SignupStatusCode.CANT_USE_NICKNAME.rawValue {
                     self.signupResult.onNext(.cantUseNickname)
-                } else {
-                    self.signupResult.onNext(.success)
                 }
-            case .tokenExpiration(_):
+            case .tokenExpiration:
                 self.signup()
             case .fail:
                 self.signupResult.onNext(.fail)

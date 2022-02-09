@@ -10,12 +10,9 @@ import Foundation
 enum HTTPStatusCode: Int {
     case OK = 200
     case FIREBASE_TOKEN_ERROR = 401
+    case UNSUBSCRIBED_USER = 406
     case SERVER_ERROR = 500
     case CLIENT_ERROR = 501
-    
-    enum LoginStatusCode: Int {
-        case ALREADY = 201
-    }
 }
 
 // 회원가입
@@ -23,20 +20,6 @@ enum SignupStatusCode: Int {
     case ALREADY_SIGNIN = 201
     case CANT_USE_NICKNAME = 202
 }
-
-// 로그인
-enum LoginStatusCode: Int {
-    case NOT_USER = 201
-}
-
-// 회원탈퇴
-enum WithdrawStatusCode: Int {
-    case ALREADY_WITHDRAW = 406
-}
-
-// FCM 토큰 갱신 (공통 코드만 존재)
-
-// 마이페이지 설정 업데이트 (공통 코드만 존재)
 
 // 취미 함께할 친구 찾기 요청 (post queue)
 enum QueueStatusCode: Int {
