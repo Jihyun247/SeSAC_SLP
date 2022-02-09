@@ -9,15 +9,12 @@ import Foundation
 import UIKit
 import MapKit
 
-enum MatchingStatus {
-    case general, waiting, matched
-}
-
 class MapView: UIView {
     let deviceWidthRatio = UIScreen.main.bounds.width / 375
     let deviceHeightRatio = UIScreen.main.bounds.height / 812
     
     let mapView = MKMapView()
+    let centerMarkerImageView = UIImageView()
     let floatingButton = UIButton()
     let genderStackView = UIStackView()
     let allGenderButton = UIButton()
@@ -43,6 +40,8 @@ class MapView: UIView {
     
     func setup(status: MatchingStatus? = nil) {
         
+        centerMarkerImageView.image = UIImage(named: "map_marker")
+        
         switch status {
         case .general:
             floatingButton.setImage(UIImage(named: "general_status_button"), for: .normal)
@@ -61,7 +60,11 @@ class MapView: UIView {
         
         allGenderButton.fill(text: "전체", radiusStatus: true)
         allGenderButton.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
         menGenderButton.inactive(text: "남자", radiusStatus: false)
+        womenGenderButton.layer.borderWidth = 0
+        menGenderButton.layer.maskedCorners = []
+        
         womenGenderButton.inactive(text: "여자", radiusStatus: true)
         womenGenderButton.layer.borderWidth = 0
         womenGenderButton.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -70,7 +73,7 @@ class MapView: UIView {
         currentLocationButton.backgroundColor = .white
         currentLocationButton.setShadowWithRadius(cornerRadius: 8)
         
-        [mapView, floatingButton, genderStackView, currentLocationButton].forEach { self.addSubview($0) }
+        [mapView, centerMarkerImageView, floatingButton, genderStackView, currentLocationButton].forEach { self.addSubview($0) }
         [allGenderButton, menGenderButton, womenGenderButton].forEach { genderStackView.addArrangedSubview($0) }
     }
     
@@ -78,6 +81,11 @@ class MapView: UIView {
         
         mapView.snp.makeConstraints { make in
             make.edges.equalTo(safeAreaLayoutGuide)
+        }
+        
+        centerMarkerImageView.snp.makeConstraints { make in
+            make.center.equalTo(safeAreaLayoutGuide)
+            make.size.equalTo(48)
         }
         
         floatingButton.snp.makeConstraints { make in

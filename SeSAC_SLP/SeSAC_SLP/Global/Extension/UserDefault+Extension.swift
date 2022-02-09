@@ -50,4 +50,13 @@ extension UserDefaults {
     
     @UserDefault (key: "gender", defaultValue: -1)
     static var gender: Int
+    
+    @UserDefault (key: "lat", defaultValue: 37.51818789942772)
+    static var lat: Double
+    
+    @UserDefault (key: "long", defaultValue: 126.88541765534976)
+    static var long: Double
+    
+    @UserDefault (key: "region", defaultValue: 1275130688)
+    static var region: Int
 }

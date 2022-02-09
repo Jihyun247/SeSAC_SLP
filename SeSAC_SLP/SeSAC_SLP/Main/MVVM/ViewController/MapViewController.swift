@@ -17,6 +17,7 @@ class MapViewController: UIViewController {
     // MARK: - 인스턴스
     let mainView = MapView(status: .general)
     let viewModel = MapViewModel()
+    let httpViewModel = MapHTTPViewModel()
     
     let disposeBag = DisposeBag()
     
@@ -28,21 +29,90 @@ class MapViewController: UIViewController {
     // MARK: - viewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
+
         title = "홈"
         navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
         binding()
         mapSetup()
     }
     
-    // MARK: - 바인딩 (Tap , Button)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //viewModel.getCurrentLocation()
+        httpViewModel.onqueue(region: UserDefaults.region, lat: UserDefaults.lat, long: UserDefaults.long)
+    }
+    
+    // MARK: - binding
     func binding() {
+        
+        // MARK: - viewModel binding
+        
+        let input = MapViewModel.Input(allTap: mainView.allGenderButton.rx.tap, womenTap: mainView.womenGenderButton.rx.tap, menTap: mainView.menGenderButton.rx.tap, currentLocationTap: mainView.currentLocationButton.rx.tap, floatingTap: mainView.floatingButton.rx.tap)
+        let output = viewModel.transform(input: input)
         
         viewModel.currentLocation.subscribe { location in
             self.mainView.mapView.setRegion(MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)), animated: true)
         }
         .disposed(by: disposeBag)
 
+        output.genderSelected.subscribe { selectedGender in
+            
+            [self.mainView.allGenderButton, self.mainView.menGenderButton, self.mainView.womenGenderButton].forEach {
+                $0.inactive()
+                $0.layer.borderWidth = 0
+            }
+            switch selectedGender.element {
+            case .all:
+                self.mainView.allGenderButton.fill()
+            case .men:
+                self.mainView.menGenderButton.fill()
+            case .women:
+                self.mainView.womenGenderButton.fill()
+            case .none:
+                print("none")
+            }
+            
+            self.httpViewModel.onqueue(region: UserDefaults.region, lat: UserDefaults.lat, long: UserDefaults.long)
+        }
+        .disposed(by: disposeBag)
         
+        output.floatingButtonClicked.subscribe { matchingStatus in
+            switch matchingStatus.element {
+            case .general:
+                print("all selected")
+            case .waiting:
+                print("all selected")
+            case .matched:
+                print("all selected")
+            case .none:
+                print("none")
+            }
+        }
+        .disposed(by: disposeBag)
+
+        // MARK: - httpViewModel binding
+        
+        httpViewModel.exploreResult.subscribe { queueResult in
+            guard let result = queueResult.element else {
+                // 에러 알럿
+                return
+            }
+            self.viewModel.menAnnotation.removeAll()
+            self.viewModel.womenAnnotation.removeAll()
+            for aroundUser in (result.fromQueueDB + result.fromQueueDBRequested) {
+                
+                let coordinate = CLLocationCoordinate2D(latitude: aroundUser.lat, longitude: aroundUser.long)
+                let sesacType = SesacType(rawValue: aroundUser.sesac)!
+                let sesacAnnotation = SesacAnnotation(coordinate: coordinate, sesacType: sesacType)
+                
+                aroundUser.gender == Gender.man.rawValue ?
+                    self.viewModel.menAnnotation.append(sesacAnnotation) :
+                    self.viewModel.womenAnnotation.append(sesacAnnotation)
+            }
+            self.addFilteredAnnotations(gender: self.viewModel.selectedGender.value)
+        }
+        .disposed(by: disposeBag)
+
     }
     
     // MARK: - map setting
@@ -52,15 +122,75 @@ class MapViewController: UIViewController {
         viewModel.locationManager.delegate = self
         viewModel.locationManager.requestWhenInUseAuthorization() // 권한 요청
     }
+    
+    func addFilteredAnnotations(gender: GenderFilter){ // rxswift로 리팩토링
+
+        mainView.mapView.removeAnnotations(mainView.mapView.annotations)
+            
+        switch gender {
+        case .all:
+            mainView.mapView.addAnnotations(viewModel.menAnnotation)
+            mainView.mapView.addAnnotations(viewModel.womenAnnotation)
+        case .men:
+            mainView.mapView.addAnnotations(viewModel.menAnnotation)
+        case .women:
+            mainView.mapView.addAnnotations(viewModel.womenAnnotation)
+        }
+    }
 }
 
 extension MapViewController: MKMapViewDelegate {
     
     // 재사용 할 수 있는 어노테이션 like tableview cell
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//
-//    }
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        guard let annotation = annotation as? SesacAnnotation else {
+            return nil
+        }
+
+        var annotationView = mainView.mapView.dequeueReusableAnnotationView(withIdentifier: SesacAnnotationView.identifier)
+        
+        if annotationView == nil {
+
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: SesacAnnotationView.identifier)
+            annotationView?.canShowCallout = false
+            
+        } else {
+            annotationView?.annotation = annotation
+        }
+        
+        let image: UIImage?
+        switch annotation.sesacType {
+            
+        case .basic:
+            image = UIImage(named: "sesac_face_1")
+        case .teunteun:
+            image = UIImage(named: "sesac_face_2")
+        case .mint:
+            image = UIImage(named: "sesac_face_3")
+        case .purple:
+            image = UIImage(named: "sesac_face_4")
+        case .gold:
+            image = UIImage(named: "sesac_face_5")
+        }
+        annotationView?.image = image
+        
+        return annotationView
+    }
     
+    // 맵 이동
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        print("regionDidChangeAnimated \(UserDefaults.region)")
+        
+        viewModel.setLatLongRegion(coordinate: mapView.centerCoordinate)
+        httpViewModel.onqueue(region: UserDefaults.region, lat: UserDefaults.lat, long: UserDefaults.long)
+    }
+    
+    // 사용자 이동
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("didUpdateLocations \(UserDefaults.region)")
+        viewModel.getCurrentLocation()
+    }
 }
 
 extension MapViewController: CLLocationManagerDelegate {
@@ -98,8 +228,9 @@ extension MapViewController: CLLocationManagerDelegate {
                 alertLocationAuthorization()
                 // 위치 권한 허용 팝업
             case .authorizedAlways, .authorizedWhenInUse:
-                viewModel.locationManager.startUpdatingLocation()
-                viewModel.currentLocation.accept(viewModel.locationManager.location!.coordinate)
+                print("")
+//                viewModel.getCurrentLocation()
+                httpViewModel.onqueue(region: UserDefaults.region, lat: UserDefaults.lat, long: UserDefaults.long)
             @unknown default:
                 print("unknown")
             }

@@ -10,46 +10,46 @@ import UIKit
 
 extension UIButton {
     
-    func inactive(text: String, radiusStatus: Bool = true) {
+    func inactive(text: String = "", radiusStatus: Bool = true) {
         //self.isEnabled = false
         radiusStatus ? self.setBorderColorAndRadius(borderColor: .sesacGray4, borderWidth: 0.5, cornerRadius: 8) : nil
-        self.setTitle(text, for: .normal)
+        if text != "" { self.setTitle(text, for: .normal) }
         self.setTitleColor(.sesacBlack, for: .normal)
         self.setBackgroundColor(.white, for: .normal)
         self.titleLabel?.font = .body3_R14
     }
     
-    func fill(text: String, radiusStatus: Bool = true) {
+    func fill(text: String = "", radiusStatus: Bool = true) {
         //self.isEnabled = true
         radiusStatus ? self.setBorderColorAndRadius(borderColor: .sesacGreen, borderWidth: 0.5, cornerRadius: 8) : nil
-        self.setTitle(text, for: .normal)
+        if text != "" { self.setTitle(text, for: .normal) }
         self.setTitleColor(.white, for: .normal)
         self.setBackgroundColor(.sesacGreen, for: .normal)
         self.titleLabel?.font = .body3_R14
     }
     
-    func outline(text: String, radiusStatus: Bool = true) {
+    func outline(text: String = "", radiusStatus: Bool = true) {
         //self.isEnabled = true
         radiusStatus ? self.setBorderColorAndRadius(borderColor: .sesacGreen, borderWidth: 0.5, cornerRadius: 8) : nil
-        self.setTitle(text, for: .normal)
+        if text != "" { self.setTitle(text, for: .normal) }
         self.setTitleColor(.sesacGreen, for: .normal)
         self.setBackgroundColor(.white, for: .normal)
         self.titleLabel?.font = .body3_R14
     }
     
-    func cancel(text: String, radiusStatus: Bool = true) {
+    func cancel(text: String = "", radiusStatus: Bool = true) {
         //self.isEnabled = true
         radiusStatus ? self.setBorderColorAndRadius(borderColor: .sesacGray2, borderWidth: 0.5, cornerRadius: 8) : nil
-        self.setTitle(text, for: .normal)
+        if text != "" { self.setTitle(text, for: .normal) }
         self.setTitleColor(.sesacBlack, for: .normal)
         self.setBackgroundColor(.sesacGray2, for: .normal)
         self.titleLabel?.font = .body3_R14
     }
     
-    func disable(text: String, radiusStatus: Bool = true) {
+    func disable(text: String = "", radiusStatus: Bool = true) {
         //self.isEnabled = false
         radiusStatus ? self.setBorderColorAndRadius(borderColor: .clear, borderWidth: 0, cornerRadius: 8) : nil
-        self.setTitle(text, for: .normal)
+        if text != "" { self.setTitle(text, for: .normal) }
         self.setTitleColor(.sesacGray3, for: .normal)
         self.setBackgroundColor(.sesacGray7, for: .normal)
         self.titleLabel?.font = .body3_R14
