@@ -29,7 +29,7 @@ struct APIService {
     
     func onqueue(_ region: Int, _ lat: Double, _ long: Double, completion: @escaping (NetworkResult<AroundQueue>) -> Void) {
         
-        let target: APITarget = .onqueue(idtoken: UserDefaults.idToken, FCMtoken: UserDefaults.fcmToken, region: region, lat: lat, long: long)
+        let target: APITarget = .onqueue(idtoken: UserDefaults.idToken, region: region, lat: lat, long: long)
         
         requestResultData(target, completion: completion)
     }

@@ -14,7 +14,7 @@ enum APITarget { // 토큰 쿼리 파라미터 바디 모두 입력
     case deleteUser(idtoken: String)
     case updateFCMtoken(idtoken: String, FCMtoken: String)
     case upsdateMypage(idtoken: String, searchable: Int, ageMin: Int, ageMax: Int, gender: Int, hobby: String)
-    case onqueue(idtoken: String, FCMtoken: String, region: Int, lat: Double, long: Double)
+    case onqueue(idtoken: String, region: Int, lat: Double, long: Double)
 }
 
 extension APITarget: TargetType {
@@ -62,15 +62,15 @@ extension APITarget: TargetType {
             return .requestParameters(parameters: ["FCMtoken": FCMtoken], encoding: JSONEncoding.default)
         case .upsdateMypage(_, let searchable, let ageMin, let ageMax, let gender, let hobby):
             return .requestParameters(parameters: ["searchable": searchable, "ageMin": ageMin, "ageMax": ageMax, "gender": gender, "hobby": hobby], encoding: JSONEncoding.default)
-        case .onqueue(_, let FCMtoken, let region, let lat, let long):
-            return .requestParameters(parameters: ["FCMtoken": FCMtoken, "region": region, "lat": lat, "long": long], encoding: JSONEncoding.default)
+        case .onqueue(_, let region, let lat, let long):
+            return .requestParameters(parameters: ["region": region, "lat": lat, "long": long], encoding: JSONEncoding.default)
         }
     }
     
     var headers: [String : String]? {
         switch self {
-        case .signup(let idtoken, _,_,_,_,_,_), .login(let idtoken), .deleteUser(let idtoken), .updateFCMtoken(let idtoken, _), .upsdateMypage(let idtoken, _,_,_,_,_), .onqueue(let idtoken, _,_,_,_):
-            return ["Content-Type" : "application/x-www-form-urlencoded", "idtoken" : idtoken]
+        case .signup(let idtoken, _,_,_,_,_,_), .login(let idtoken), .deleteUser(let idtoken), .updateFCMtoken(let idtoken, _), .upsdateMypage(let idtoken, _,_,_,_,_), .onqueue(let idtoken,_,_,_):
+            return ["Content-Type" : "application/json", "idtoken" : idtoken]
         }
     }
     

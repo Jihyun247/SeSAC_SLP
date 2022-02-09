@@ -31,7 +31,7 @@
 		B80A0C5A279720C2004E1BB3 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80A0C59279720C2004E1BB3 /* CustomTextField.swift */; };
 		B816DB1327B2D23B00BC16E3 /* MainCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B816DB1227B2D23B00BC16E3 /* MainCase.swift */; };
 		B816DB1527B2F1DF00BC16E3 /* MapHTTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B816DB1427B2F1DF00BC16E3 /* MapHTTPViewModel.swift */; };
-		B816DB1727B2F4CE00BC16E3 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = B816DB1627B2F4CE00BC16E3 /* Friend.swift */; };
+		B816DB1727B2F4CE00BC16E3 /* AroundUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B816DB1627B2F4CE00BC16E3 /* AroundUser.swift */; };
 		B816DB1B27B327F500BC16E3 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B816DB1A27B327F500BC16E3 /* Int+Extension.swift */; };
 		B82037CA27AA5AFF00B3BC4A /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82037C927AA5AFF00B3BC4A /* UINavigationController+Extension.swift */; };
 		B82037CE27AA980B00B3BC4A /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82037CD27AA980B00B3BC4A /* CustomTabBar.swift */; };
@@ -69,6 +69,7 @@
 		B87F6732279626A400A30366 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B87F6731279626A400A30366 /* FirebaseCrashlytics */; };
 		B87F6734279626A400A30366 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = B87F6733279626A400A30366 /* FirebaseMessaging */; };
 		B886D13427B3CF5E00862A2E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B886D13327B3CF5E00862A2E /* String+Extension.swift */; };
+		B886D13627B44E5400862A2E /* SesacAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B886D13527B44E5400862A2E /* SesacAnnotation.swift */; };
 		B8A54DCB27A16FFE005DB56F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A54DCA27A16FFE005DB56F /* TabBarController.swift */; };
 		B8A54DCD27A171A8005DB56F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A54DCC27A171A8005DB56F /* MapViewController.swift */; };
 		B8A54DDB27A17F69005DB56F /* MainShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A54DDA27A17F69005DB56F /* MainShopViewController.swift */; };
@@ -115,7 +116,7 @@
 		B80A0C59279720C2004E1BB3 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		B816DB1227B2D23B00BC16E3 /* MainCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCase.swift; sourceTree = "<group>"; };
 		B816DB1427B2F1DF00BC16E3 /* MapHTTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHTTPViewModel.swift; sourceTree = "<group>"; };
-		B816DB1627B2F4CE00BC16E3 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		B816DB1627B2F4CE00BC16E3 /* AroundUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundUser.swift; sourceTree = "<group>"; };
 		B816DB1A27B327F500BC16E3 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		B82037C927AA5AFF00B3BC4A /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		B82037CD27AA980B00B3BC4A /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
@@ -147,6 +148,7 @@
 		B87D42D827A76C80002D528D /* CommonUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtility.swift; sourceTree = "<group>"; };
 		B87D42DA27A76E92002D528D /* SignupCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCase.swift; sourceTree = "<group>"; };
 		B886D13327B3CF5E00862A2E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		B886D13527B44E5400862A2E /* SesacAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SesacAnnotation.swift; sourceTree = "<group>"; };
 		B8A54DCA27A16FFE005DB56F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B8A54DCC27A171A8005DB56F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B8A54DDA27A17F69005DB56F /* MainShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainShopViewController.swift; sourceTree = "<group>"; };
@@ -218,7 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				B802DF91279FD78B0034D12D /* User.swift */,
-				B816DB1627B2F4CE00BC16E3 /* Friend.swift */,
+				B816DB1627B2F4CE00BC16E3 /* AroundUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -378,6 +380,7 @@
 			children = (
 				B8A54DCA27A16FFE005DB56F /* TabBarController.swift */,
 				B84EBD8827B139AE0000A137 /* MapView.swift */,
+				B886D13527B44E5400862A2E /* SesacAnnotation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -785,7 +788,7 @@
 				B886D13427B3CF5E00862A2E /* String+Extension.swift in Sources */,
 				B80A0C3D2796CC22004E1BB3 /* UILabel+Extension.swift in Sources */,
 				B80A0C28279696F8004E1BB3 /* MessageViewController.swift in Sources */,
-				B816DB1727B2F4CE00BC16E3 /* Friend.swift in Sources */,
+				B816DB1727B2F4CE00BC16E3 /* AroundUser.swift in Sources */,
 				B80A0C3F2796D283004E1BB3 /* CustomUILabel.swift in Sources */,
 				B8452E8427A3C96B00C9BC06 /* MyInfoCell.swift in Sources */,
 				B8519AD7279A7A4C0054D7B8 /* OnboardingViewController.swift in Sources */,
@@ -796,6 +799,7 @@
 				B8EDF6722795C84F0007DD67 /* SeSAC_SLP.xcdatamodeld in Sources */,
 				B8A54DDD27A17F8F005DB56F /* MainFriendsViewController.swift in Sources */,
 				B816DB1327B2D23B00BC16E3 /* MainCase.swift in Sources */,
+				B886D13627B44E5400862A2E /* SesacAnnotation.swift in Sources */,
 				B8519B02279AE35C0054D7B8 /* AuthViewModel.swift in Sources */,
 				B82037D027AA9B0900B3BC4A /* MyProfileView.swift in Sources */,
 				B87D42DB27A76E92002D528D /* SignupCase.swift in Sources */,
