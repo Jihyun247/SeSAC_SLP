@@ -77,6 +77,12 @@
 		B8CB92BB279D09E80062EDDE /* SkyFloatingLabelTextField in Frameworks */ = {isa = PBXBuildFile; productRef = B8CB92BA279D09E80062EDDE /* SkyFloatingLabelTextField */; };
 		B8CB92BD279D26630062EDDE /* NicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CB92BC279D26630062EDDE /* NicknameViewModel.swift */; };
 		B8CB92C0279D3FB90062EDDE /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CB92BF279D3FB90062EDDE /* Protocols.swift */; };
+		B8E1FA7827B640070049D80D /* StartSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1FA7727B640070049D80D /* StartSearchViewController.swift */; };
+		B8E1FA7A27B640120049D80D /* ResultSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1FA7927B640120049D80D /* ResultSearchViewController.swift */; };
+		B8E1FA7C27B6401A0049D80D /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1FA7B27B6401A0049D80D /* ChatViewController.swift */; };
+		B8E1FA7E27B649270049D80D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1FA7D27B649270049D80D /* UIViewController+Extension.swift */; };
+		B8E1FA8027B6DED20049D80D /* StartSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1FA7F27B6DED20049D80D /* StartSearchViewModel.swift */; };
+		B8E1FA8227B6DED90049D80D /* StartSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1FA8127B6DED90049D80D /* StartSearchView.swift */; };
 		B8EDF6682795C84F0007DD67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EDF6672795C84F0007DD67 /* AppDelegate.swift */; };
 		B8EDF66A2795C84F0007DD67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EDF6692795C84F0007DD67 /* SceneDelegate.swift */; };
 		B8EDF6722795C84F0007DD67 /* SeSAC_SLP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B8EDF6702795C84F0007DD67 /* SeSAC_SLP.xcdatamodeld */; };
@@ -155,6 +161,12 @@
 		B8A54DDC27A17F8F005DB56F /* MainFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFriendsViewController.swift; sourceTree = "<group>"; };
 		B8CB92BC279D26630062EDDE /* NicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewModel.swift; sourceTree = "<group>"; };
 		B8CB92BF279D3FB90062EDDE /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		B8E1FA7727B640070049D80D /* StartSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSearchViewController.swift; sourceTree = "<group>"; };
+		B8E1FA7927B640120049D80D /* ResultSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSearchViewController.swift; sourceTree = "<group>"; };
+		B8E1FA7B27B6401A0049D80D /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		B8E1FA7D27B649270049D80D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		B8E1FA7F27B6DED20049D80D /* StartSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSearchViewModel.swift; sourceTree = "<group>"; };
+		B8E1FA8127B6DED90049D80D /* StartSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSearchView.swift; sourceTree = "<group>"; };
 		B8EDF6642795C84F0007DD67 /* SeSAC_SLP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC_SLP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8EDF6672795C84F0007DD67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8EDF6692795C84F0007DD67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -297,6 +309,7 @@
 				B82037C927AA5AFF00B3BC4A /* UINavigationController+Extension.swift */,
 				B816DB1A27B327F500BC16E3 /* Int+Extension.swift */,
 				B886D13327B3CF5E00862A2E /* String+Extension.swift */,
+				B8E1FA7D27B649270049D80D /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -362,6 +375,9 @@
 			isa = PBXGroup;
 			children = (
 				B8A54DCC27A171A8005DB56F /* MapViewController.swift */,
+				B8E1FA7727B640070049D80D /* StartSearchViewController.swift */,
+				B8E1FA7927B640120049D80D /* ResultSearchViewController.swift */,
+				B8E1FA7B27B6401A0049D80D /* ChatViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -371,6 +387,7 @@
 			children = (
 				B84EBD8627B139A80000A137 /* MapViewModel.swift */,
 				B816DB1427B2F1DF00BC16E3 /* MapHTTPViewModel.swift */,
+				B8E1FA7F27B6DED20049D80D /* StartSearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -381,6 +398,7 @@
 				B8A54DCA27A16FFE005DB56F /* TabBarController.swift */,
 				B84EBD8827B139AE0000A137 /* MapView.swift */,
 				B886D13527B44E5400862A2E /* SesacAnnotation.swift */,
+				B8E1FA8127B6DED90049D80D /* StartSearchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -760,12 +778,15 @@
 				B8FEABBB27980AF300441440 /* UIBarButton+Extension.swift in Sources */,
 				B8CB92C0279D3FB90062EDDE /* Protocols.swift in Sources */,
 				B8F36F7127990CDF0088628B /* GenderViewController.swift in Sources */,
+				B8E1FA7827B640070049D80D /* StartSearchViewController.swift in Sources */,
 				B8747A8E279E4A9F00FF90AD /* GenderViewModel.swift in Sources */,
+				B8E1FA7A27B640120049D80D /* ResultSearchViewController.swift in Sources */,
 				B8CB92BD279D26630062EDDE /* NicknameViewModel.swift in Sources */,
 				B82037CA27AA5AFF00B3BC4A /* UINavigationController+Extension.swift in Sources */,
 				B8747A96279E511600FF90AD /* UserDefault+Extension.swift in Sources */,
 				B8519AFB279A9B9A0054D7B8 /* OnboardingCell.swift in Sources */,
 				B8EDF6682795C84F0007DD67 /* AppDelegate.swift in Sources */,
+				B8E1FA8227B6DED90049D80D /* StartSearchView.swift in Sources */,
 				B8452E8D27A44FA300C9BC06 /* MyProfileViewController.swift in Sources */,
 				B80A0C5627971C1C004E1BB3 /* UIButton+Extension.swift in Sources */,
 				B8F36F6B27990B5A0088628B /* NicknameViewController.swift in Sources */,
@@ -778,15 +799,18 @@
 				B8FEABB52797DDA200441440 /* CustomUIButton.swift in Sources */,
 				B8FEABB9279809F200441440 /* PhoneNumViewController.swift in Sources */,
 				B816DB1527B2F1DF00BC16E3 /* MapHTTPViewModel.swift in Sources */,
+				B8E1FA8027B6DED20049D80D /* StartSearchViewModel.swift in Sources */,
 				B80A0C502797080F004E1BB3 /* APITarget.swift in Sources */,
 				B8452E7D27A3C51A00C9BC06 /* MyInfoView.swift in Sources */,
 				B8747A8C279E4A6E00FF90AD /* EmailViewModel.swift in Sources */,
+				B8E1FA7E27B649270049D80D /* UIViewController+Extension.swift in Sources */,
 				B802DF8C279FC5E80034D12D /* HTTPStatusCode.swift in Sources */,
 				B8A54DDB27A17F69005DB56F /* MainShopViewController.swift in Sources */,
 				B8A54DCD27A171A8005DB56F /* MapViewController.swift in Sources */,
 				B82037D227AA9B1600B3BC4A /* MyProfileViewModel.swift in Sources */,
 				B886D13427B3CF5E00862A2E /* String+Extension.swift in Sources */,
 				B80A0C3D2796CC22004E1BB3 /* UILabel+Extension.swift in Sources */,
+				B8E1FA7C27B6401A0049D80D /* ChatViewController.swift in Sources */,
 				B80A0C28279696F8004E1BB3 /* MessageViewController.swift in Sources */,
 				B816DB1727B2F4CE00BC16E3 /* AroundUser.swift in Sources */,
 				B80A0C3F2796D283004E1BB3 /* CustomUILabel.swift in Sources */,

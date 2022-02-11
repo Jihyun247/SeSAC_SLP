@@ -79,11 +79,19 @@ class MapViewController: UIViewController {
         output.floatingButtonClicked.subscribe { matchingStatus in
             switch matchingStatus.element {
             case .general:
-                print("all selected")
+                if UserDefaults.gender == Gender.none.rawValue {
+                    self.alert(title: "성별 설정으로 이동", message: "새싹 찾기 기능을 이용하기 위해서는 성별이 필요해요!") { action in
+                        self.tabBarController?.selectedIndex = 3
+                        let selectedNVC = self.tabBarController?.selectedViewController as? UINavigationController
+                        selectedNVC?.pushViewController(MyProfileViewController(), animated: true)
+                    }
+                } else {
+                    self.navigationController?.pushViewController(StartSearchViewController(), animated: true)
+                }
             case .waiting:
-                print("all selected")
+                self.navigationController?.pushViewController(ResultSearchViewController(), animated: true)
             case .matched:
-                print("all selected")
+                self.navigationController?.pushViewController(ChatViewController(), animated: true)
             case .none:
                 print("none")
             }
@@ -94,7 +102,7 @@ class MapViewController: UIViewController {
         
         httpViewModel.exploreResult.subscribe { queueResult in
             guard let result = queueResult.element else {
-                // 에러 알럿
+                self.alert(title: "에러가 발생했습니다", message: "다시 실행해주세요")
                 return
             }
             self.viewModel.menAnnotation.removeAll()
@@ -123,6 +131,8 @@ class MapViewController: UIViewController {
         viewModel.locationManager.requestWhenInUseAuthorization() // 권한 요청
     }
     
+    // MARK: - Add Map Annotation
+    // 여기서 추가된 어노테이션은 mkmapviewdelegate annotation 메서드를 통해 커스텀 되어 띄워지게 됨
     func addFilteredAnnotations(gender: GenderFilter){ // rxswift로 리팩토링
 
         mainView.mapView.removeAnnotations(mainView.mapView.annotations)
@@ -139,6 +149,7 @@ class MapViewController: UIViewController {
     }
 }
 
+// MARK: - MKMapViewDelegate (Annotation Custom & Map or User When Moved)
 extension MapViewController: MKMapViewDelegate {
     
     // 재사용 할 수 있는 어노테이션 like tableview cell
@@ -193,6 +204,8 @@ extension MapViewController: MKMapViewDelegate {
     }
 }
 
+// MARK: - CLLocationManagerDelegate (Location Authorization & Location Accuracy ..)
+
 extension MapViewController: CLLocationManagerDelegate {
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
@@ -225,10 +238,9 @@ extension MapViewController: CLLocationManagerDelegate {
                 print("restricted")
                 alertLocationAuthorization()
             case .denied:
+                print("restricted")
                 alertLocationAuthorization()
-                // 위치 권한 허용 팝업
             case .authorizedAlways, .authorizedWhenInUse:
-                print("")
 //                viewModel.getCurrentLocation()
                 httpViewModel.onqueue(region: UserDefaults.region, lat: UserDefaults.lat, long: UserDefaults.long)
             @unknown default:
@@ -254,22 +266,13 @@ extension MapViewController: CLLocationManagerDelegate {
     
     func alertLocationAuthorization() {
         
-        let alert = UIAlertController(title: "위치권한 요청", message: "새싹프렌즈 이용을 위해 위치 권한이 필요합니다", preferredStyle: .alert)
-        let settingAction = UIAlertAction(title: "설정", style: .default) { action in
+        self.alert(title: "위치권한 요청", message: "새싹프렌즈 이용을 위해 위치 권한이 필요합니다", okTitle: "설정", cancelTitle: "취소", okHandler: { action in
             guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
             // 열 수 있는 url 이라면, 이동
             if UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url)
             }
-        }
-        let cancelAction = UIAlertAction(title: "취소", style: .cancel) { UIAlertAction in
-            
-        }
-        
-        alert.addAction(settingAction)
-        alert.addAction(cancelAction)
-        
-        present(alert, animated: true, completion: nil)
+        })
     }
     
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum MatchingStatus {
+enum MatchingStatus: Int {
     case general, waiting, matched
 }
 

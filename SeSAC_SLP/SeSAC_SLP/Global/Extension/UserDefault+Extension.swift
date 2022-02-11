@@ -59,4 +59,7 @@ extension UserDefaults {
     
     @UserDefault (key: "region", defaultValue: 1275130688)
     static var region: Int
+    
+    @UserDefault (key: "matchingStatus", defaultValue: 0)
+    static var matchingStatus: Int
 }
