@@ -35,4 +35,19 @@ extension UINavigationController {
         let attributes = [NSAttributedString.Key.foregroundColor: UIColor.sesacBlack, NSAttributedString.Key.font: UIFont.title3_M14]
         navigationBar.titleTextAttributes = attributes as [NSAttributedString.Key : Any]
     }
+    
+    func navigationBarWithSearchBar(navigationItem: UINavigationItem, searchBar: UISearchBar) {
+     
+        navigationBar.barTintColor = .white
+        navigationBar.isTranslucent = false
+        
+        let attributes = [NSAttributedString.Key.foregroundColor: UIColor.sesacBlack, NSAttributedString.Key.font: UIFont.title3_M14]
+        navigationBar.titleTextAttributes = attributes as [NSAttributedString.Key : Any]
+        
+        let backButton = UIBarButtonItem(image: UIImage(named: "arrow"), style: .plain, target: self, action: #selector(touchBackButton))
+        backButton.tintColor = .black
+        
+        navigationItem.leftBarButtonItem = backButton
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchBar)
+    }
 }

@@ -19,6 +19,7 @@ extension UIFont {
     class var title3_M14: UIFont? { return UIFont(name: "NotoSansKR-Medium", size: 14)}
     class var title4_R14: UIFont? { return UIFont(name: "NotoSansKR-Regular", size: 14)}
     class var title5_M12: UIFont? { return UIFont(name: "NotoSansKR-Medium", size: 12)}
+    class var title6_R12: UIFont? { return UIFont(name: "NotoSansKR-Regular", size: 12)}
     
     class var body1_M16: UIFont? { return UIFont(name: "NotoSansKR-Medium", size: 16)}
     class var body2_R16: UIFont? { return UIFont(name: "NotoSansKR-Regular", size: 16)}

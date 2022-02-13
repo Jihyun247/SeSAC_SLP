@@ -107,6 +107,13 @@ extension UILabel {
         self.lineHeightRatio = 150
     }
     
+    func title6(text: String, textColor: UIColor) {
+        self.text = text
+        self.textColor = textColor
+        self.font = .title6_R12
+        self.lineHeightRatio = 150
+    }
+    
     func body1(text: String, textColor: UIColor) {
         self.text = text
         self.textColor = textColor
