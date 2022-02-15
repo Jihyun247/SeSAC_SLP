@@ -86,7 +86,11 @@ class MapViewController: UIViewController {
                         selectedNVC?.pushViewController(MyProfileViewController(), animated: true)
                     }
                 } else {
-                    self.navigationController?.pushViewController(StartSearchViewController(), animated: true)
+                    let vc = StartSearchViewController()
+                    vc.viewModel.aroundQueue
+                        .bind(to: self.httpViewModel.exploreResult)
+                        .disposed(by: self.disposeBag)
+                    self.navigationController?.pushViewController(vc, animated: true)
                 }
             case .waiting:
                 self.navigationController?.pushViewController(ResultSearchViewController(), animated: true)

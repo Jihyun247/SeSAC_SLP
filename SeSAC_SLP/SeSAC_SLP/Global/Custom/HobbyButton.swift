@@ -22,6 +22,8 @@ class OtherHobbyButton: UIButton {
     func setup() {
         self.setBackgroundColor(.white, for: .normal)
         self.titleLabel?.font = .title4_R14
+        self.setTitleColor(.error, for: .normal)
+        self.setBorderColorAndRadius(borderColor: .error, borderWidth: 1, cornerRadius: 8)
     }
 }
 
@@ -51,6 +53,7 @@ class MyHobbyButton: UIButton {
     }
     
     func setup() {
+        self.setBackgroundColor(.white, for: .normal)
         self.setTitleColor(.sesacGreen, for: .normal)
         self.setBorderColorAndRadius(borderColor: .sesacGreen, borderWidth: 1, cornerRadius: 8)
         self.titleLabel?.font = .title4_R14

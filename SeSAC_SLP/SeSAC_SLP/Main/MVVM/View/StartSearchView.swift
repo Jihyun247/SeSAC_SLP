@@ -18,27 +18,25 @@ class StartSearchView: UIView {
     let otherHobbyLabel = UILabel()
     let myHobbyLabel = UILabel()
 
-    let otherHobbyCollectionView: UICollectionView = {
+    let otherHobbyCollectionView: DynamicHeightCollectionView = {
 
-        let layout = UICollectionViewFlowLayout()
+        let layout = LeftAlignedCollectionViewFlowLayout()
 
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 0
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-
+        layout.minimumLineSpacing = 8
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 8)
+        
+        let cv = DynamicHeightCollectionView(frame: .zero, collectionViewLayout: layout)
         return cv
     }()
-    let myHobbyCollectionView: UICollectionView = {
+    let myHobbyCollectionView: DynamicHeightCollectionView = {
 
-        let layout = UICollectionViewFlowLayout()
+        let layout = LeftAlignedCollectionViewFlowLayout()
 
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 0
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 8)
+        let cv = DynamicHeightCollectionView(frame: .zero, collectionViewLayout: layout)
 
         return cv
     }()
@@ -51,6 +49,7 @@ class StartSearchView: UIView {
         setup()
         constraints()
     }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -67,8 +66,8 @@ class StartSearchView: UIView {
         otherHobbyLabel.title6(text: "지금 주변에는", textColor: .sesacBlack)
         myHobbyLabel.title6(text: "내가 하고 싶은", textColor: .sesacBlack)
         
-        otherHobbyCollectionView.register(HobbyCollectionViewCell.self, forCellWithReuseIdentifier: HobbyCollectionViewCell.identifier)
-        myHobbyCollectionView.register(HobbyCollectionViewCell.self, forCellWithReuseIdentifier: HobbyCollectionViewCell.identifier)
+        otherHobbyCollectionView.backgroundColor = .clear
+        myHobbyCollectionView.backgroundColor = .clear
         
         startSearchButton.fill(text: "새싹 찾기", radiusStatus: true)
         
@@ -85,9 +84,8 @@ class StartSearchView: UIView {
         otherHobbyCollectionView.snp.makeConstraints { make in
             make.top.equalTo(otherHobbyLabel.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview().offset(16)
-            make.height.equalTo(112)
         }
-        
+
         myHobbyLabel.snp.makeConstraints { make in
             make.top.equalTo(otherHobbyCollectionView.snp.bottom).offset(24)
             make.leading.equalToSuperview().offset(16)
@@ -96,7 +94,6 @@ class StartSearchView: UIView {
         myHobbyCollectionView.snp.makeConstraints { make in
             make.top.equalTo(myHobbyLabel.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview().offset(16)
-            make.height.equalTo(112)
         }
         
         startSearchButton.snp.makeConstraints { make in

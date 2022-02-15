@@ -13,8 +13,6 @@ import FirebaseAuth
 import AVFoundation
 
 class MapHTTPViewModel {
-    
-    var verifyCode = BehaviorRelay<String>(value: "")
 
     let exploreResult = PublishSubject<AroundQueue>()
     
@@ -27,7 +25,6 @@ class MapHTTPViewModel {
                     print("결과 없음")
                     return
                 }
-                print("----------------print: \(exploreData)")
                 self.exploreResult.onNext(exploreData)
             case .tokenExpiration:
                 self.onqueue(region: region, lat: lat, long: long)
