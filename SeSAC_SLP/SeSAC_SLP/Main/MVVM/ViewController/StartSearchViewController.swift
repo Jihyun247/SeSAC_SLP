@@ -14,7 +14,7 @@ class StartSearchViewController: UIViewController {
     // MARK: - 인스턴스
     let mainView = StartSearchView()
     let viewModel = StartSearchViewModel()
-    //let httpViewModel = MapHTTPViewModel()
+    let httpViewModel = MapHTTPViewModel()
     
     let disposeBag = DisposeBag()
     
@@ -27,18 +27,34 @@ class StartSearchViewController: UIViewController {
  
         navigationController?.navigationBarWithSearchBar(navigationItem: self.navigationItem, searchBar: mainView.searchBar)
         setCollectionView()
+        binding()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        httpViewModel.onqueue(region: UserDefaults.region, lat: UserDefaults.lat, long: UserDefaults.long)
     }
     
     func binding() {
         
-        let input = StartSearchViewModel.Input(hobbyText: mainView.searchBar.rx.text)
+        let input = StartSearchViewModel.Input(aroundQueue: httpViewModel.exploreResult , hobbyText: mainView.searchBar.rx.text)
         let output = viewModel.transform(input: input)
         
-        output.recommendHobby.subscribe { recommended in
-            //
+        output.othersHobby.bind(to: mainView.otherHobbyCollectionView.rx.items(cellIdentifier: HobbyCollectionViewCell.identifier, cellType: HobbyCollectionViewCell.self)) { (row, element, cell) in
+            
+            cell.setup(hobbyType: .otherHobby)
+            row < self.viewModel.recommendHobby.value.count ? cell.hobbyButton.recommended() : cell.hobbyButton.near()
+            cell.hobbyButton.setTitle(element, for: .normal)
         }
         .disposed(by: disposeBag)
+        
+        output.recommendHobby.bind(to: mainView.myHobbyCollectionView.rx.items(cellIdentifier: HobbyCollectionViewCell.identifier, cellType: HobbyCollectionViewCell.self)) { (row, element, cell) in
 
+            cell.setup(hobbyType: .myHobby)
+            cell.hobbyButton.setTitle(element, for: .normal)
+        }
+        .disposed(by: disposeBag)
     }
     
     func setCollectionView() {
@@ -46,58 +62,48 @@ class StartSearchViewController: UIViewController {
         mainView.otherHobbyCollectionView.register(HobbyCollectionViewCell.self, forCellWithReuseIdentifier: HobbyCollectionViewCell.identifier)
         mainView.myHobbyCollectionView.register(HobbyCollectionViewCell.self, forCellWithReuseIdentifier: HobbyCollectionViewCell.identifier)
         mainView.otherHobbyCollectionView.delegate = self
-        mainView.otherHobbyCollectionView.dataSource = self
         mainView.myHobbyCollectionView.delegate = self
-        mainView.myHobbyCollectionView.dataSource = self
     }
 }
 
-extension StartSearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension StartSearchViewController: UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("개수는 ? \(collectionView.tag)")
-        
-        if collectionView == mainView.myHobbyCollectionView {
-            return 10
-        } else if collectionView == mainView.otherHobbyCollectionView {
-            return 20
-        }
-        
-        return 2
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HobbyCollectionViewCell.identifier, for: indexPath) as? HobbyCollectionViewCell else {
-            return UICollectionViewCell()
-        }
-        
-        if collectionView == mainView.myHobbyCollectionView {
-            cell.setup(hobbyType: .myHobby)
-            cell.hobbyButton.rx.tap
-                .subscribe { _ in
-                    // ADD
-                }
-                .disposed(by: disposeBag)
-
-        } else if collectionView == mainView.otherHobbyCollectionView {
-            cell.setup(hobbyType: .otherHobby)
-            cell.hobbyButton.rx.tap
-                .subscribe { _ in
-                    // DELETE
-                }
-                .disposed(by: disposeBag)
-        }
-    
-        return cell
-    }
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//
+//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HobbyCollectionViewCell.identifier, for: indexPath) as? HobbyCollectionViewCell else {
+//            return UICollectionViewCell()
+//        }
+//
+//        if collectionView == mainView.myHobbyCollectionView {
+//            cell.setup(hobbyType: .myHobby)
+//            cell.hobbyButton.rx.tap
+//                .subscribe { _ in
+//                   // ADD
+//                }
+//                .disposed(by: disposeBag)
+//
+//        } else if collectionView == mainView.otherHobbyCollectionView {
+//            cell.setup(hobbyType: .otherHobby)
+//            cell.hobbyButton.rx.tap
+//                .subscribe { _ in
+//                    // DELETE
+//                }
+//                .disposed(by: disposeBag)
+//        }
+//
+//        return cell
+//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let label: UILabel = {
             let label = UILabel()
             label.font = .title4_R14
-            label.text = "example text"
+            if collectionView == mainView.otherHobbyCollectionView {
+                label.text = viewModel.othersHobby.value[indexPath.item]
+            } else {
+                label.text = "example!!"
+            }
             //tagList[indexPath.item]
             label.sizeToFit()
             return label

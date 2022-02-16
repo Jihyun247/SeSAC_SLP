@@ -67,4 +67,14 @@ extension UIButton {
         self.setBackgroundImage(backgroundImage, for: state)
     }
     
+    func recommended() {
+        self.setTitleColor(.error, for: .normal)
+        self.setBorderColorAndRadius(borderColor: .error, borderWidth: 1, cornerRadius: 8)
+    }
+    
+    func near() {
+        self.setTitleColor(.sesacGray4, for: .normal)
+        self.setBorderColorAndRadius(borderColor: .sesacGray4, borderWidth: 1, cornerRadius: 8)
+    }
+    
 }

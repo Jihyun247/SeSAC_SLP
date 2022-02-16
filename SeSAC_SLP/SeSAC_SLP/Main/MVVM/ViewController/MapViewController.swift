@@ -87,9 +87,7 @@ class MapViewController: UIViewController {
                     }
                 } else {
                     let vc = StartSearchViewController()
-                    vc.viewModel.aroundQueue
-                        .bind(to: self.httpViewModel.exploreResult)
-                        .disposed(by: self.disposeBag)
+                    vc.viewModel.matchingStatus.onNext(self.viewModel.matchingStatus.value)
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
             case .waiting:

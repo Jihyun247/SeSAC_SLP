@@ -34,6 +34,7 @@ class HobbyCollectionViewCell: UICollectionViewCell {
         case .myHobby:
             hobbyButton = MyHobbyButton()
             hobbyButton.setTitle("내취미", for: .normal)
+            hobbyButton.semanticContentAttribute = .forceRightToLeft
         case .otherHobby:
             hobbyButton = OtherHobbyButton()
             hobbyButton.setTitle("다른사람", for: .normal)

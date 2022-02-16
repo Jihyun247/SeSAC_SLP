@@ -22,21 +22,6 @@ class OtherHobbyButton: UIButton {
     func setup() {
         self.setBackgroundColor(.white, for: .normal)
         self.titleLabel?.font = .title4_R14
-        self.setTitleColor(.error, for: .normal)
-        self.setBorderColorAndRadius(borderColor: .error, borderWidth: 1, cornerRadius: 8)
-    }
-}
-
-extension OtherHobbyButton {
-    
-    func recommanded() {
-        self.setTitleColor(.error, for: .normal)
-        self.setBorderColorAndRadius(borderColor: .error, borderWidth: 1, cornerRadius: 8)
-    }
-    
-    func near() {
-        self.setTitleColor(.sesacGray4, for: .normal)
-        self.setBorderColorAndRadius(borderColor: .sesacGray4, borderWidth: 1, cornerRadius: 8)
     }
 }
 

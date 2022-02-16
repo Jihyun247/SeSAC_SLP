@@ -34,7 +34,7 @@ class StartSearchView: UIView {
         let layout = LeftAlignedCollectionViewFlowLayout()
 
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 0
+        layout.minimumLineSpacing = 8
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 8)
         let cv = DynamicHeightCollectionView(frame: .zero, collectionViewLayout: layout)
 
@@ -83,7 +83,7 @@ class StartSearchView: UIView {
         
         otherHobbyCollectionView.snp.makeConstraints { make in
             make.top.equalTo(otherHobbyLabel.snp.bottom).offset(16)
-            make.leading.trailing.equalToSuperview().offset(16)
+            make.leading.trailing.equalToSuperview().inset(16)
         }
 
         myHobbyLabel.snp.makeConstraints { make in
@@ -93,7 +93,7 @@ class StartSearchView: UIView {
         
         myHobbyCollectionView.snp.makeConstraints { make in
             make.top.equalTo(myHobbyLabel.snp.bottom).offset(16)
-            make.leading.trailing.equalToSuperview().offset(16)
+            make.leading.trailing.equalToSuperview().inset(16)
         }
         
         startSearchButton.snp.makeConstraints { make in

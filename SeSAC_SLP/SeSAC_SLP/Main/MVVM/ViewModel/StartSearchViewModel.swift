@@ -9,35 +9,41 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class StartSearchViewModel: ViewModel {
+class StartSearchViewModel {
     
-    let aroundQueue = PublishSubject<AroundQueue>()
+    let disposeBag = DisposeBag()
+    
     let matchingStatus = PublishSubject<MatchingStatus>()
     
+    let recommendHobby = BehaviorRelay<[String]>(value: [])
+    let nearHobby = BehaviorRelay<[String]>(value: [])
+    let othersHobby = BehaviorRelay<[String]>(value: [])
+    
     struct Input {
-        let hobbyText: ControlProperty<String?>
-        //let othersHobbyTap: ControlEvent<Void>
-        //let deleteMyHobbyTap: ControlEvent<Void>
+        let aroundQueue: PublishSubject<AroundQueue>
+        let tap: ControlEvent<Void>
     }
 
     struct Output {
         let recommendHobby: Observable<[String]>
         let nearHobby: Observable<[String]>
-        //let addHobbyAction: ControlEvent<Void>
-        //let deleteHobbyAction: ControlEvent<Void>
+        let othersHobby: Observable<[String]>
+        //let myHobby: Observable<[String]>
     }
-
-    var disposeBag = DisposeBag()
 
     func transform(input: Input) -> Output {
-        
-        let recommendHobby = self.aroundQueue.map { $0.fromRecommend }
-        let nearHobby = self.aroundQueue.map { $0.fromQueueDB.map { $0.hf } }
-        // [[string]] -> [string]
 
-        return Output(recommendHobby: recommendHobby, nearHobby: nearHobby)
+
+        let recommendHobby =  input.aroundQueue.map { $0.fromRecommend }
+        recommendHobby.bind(to: self.recommendHobby).disposed(by: disposeBag)
+        
+        let nearHobby =  input.aroundQueue.map { $0.fromQueueDB.map { $0.hf }.flatMap { $0 } }
+        nearHobby.bind(to: self.nearHobby).disposed(by: disposeBag)
+        // [[string]] -> [string]
+        
+        let othersHobby = Observable.combineLatest(recommendHobby, nearHobby) { $0 + $1 }
+        othersHobby.bind(to: self.othersHobby).disposed(by: disposeBag)
+
+        return Output(recommendHobby: recommendHobby, nearHobby: nearHobby, othersHobby: othersHobby)
     }
-    
-    
-    
 }
