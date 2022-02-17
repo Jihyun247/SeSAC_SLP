@@ -76,11 +76,17 @@ class StartSearchViewModel {
         return Output(recommendHobby: recommendHobby, nearHobby: nearHobby, othersHobby: othersHobby, myHobbyLengthValid: valid, returnTapped: input.tap)
     }
     
-    func setMyHobbyArray(string: String) {
+    func addMyHobbyArray(string: String) {
         
         myHobbyArray.append(contentsOf: string.components(separatedBy: " ").filter {
             !myHobbyArray.contains($0)
         })
+        myHobby.accept(self.myHobbyArray)
+    }
+    
+    func deleteMyHobbyArray(index: Int) {
+        
+        myHobbyArray.remove(at: index)
         myHobby.accept(self.myHobbyArray)
     }
 }
