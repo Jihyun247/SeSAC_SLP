@@ -54,7 +54,7 @@ class StartSearchViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        let input = StartSearchViewModel.Input(aroundQueue: httpViewModel.exploreResult, myHobbyText: mainView.searchBar.rx.text, tap: mainView.searchBar.searchTextField.rx.controlEvent(.editingDidEndOnExit))
+        let input = StartSearchViewModel.Input(aroundQueue: httpViewModel.exploreResult, myHobbyText: mainView.searchBar.rx.text, returnTap: mainView.searchBar.searchTextField.rx.controlEvent(.editingDidEndOnExit), startSearchTap: mainView.startSearchButton.rx.tap)
         let output = viewModel.transform(input: input)
         
         output.othersHobby.bind(to: mainView.otherHobbyCollectionView.rx.items(cellIdentifier: HobbyCollectionViewCell.identifier, cellType: HobbyCollectionViewCell.self)) { (row, element, cell) in
@@ -71,6 +71,7 @@ class StartSearchViewController: UIViewController {
         }
         .disposed(by: disposeBag)
         
+        // output.myHobby 로 리팩토링 하기
         viewModel.myHobby.bind(to: mainView.myHobbyCollectionView.rx.items(cellIdentifier: HobbyCollectionViewCell.identifier, cellType: HobbyCollectionViewCell.self)) { (row, element, cell) in
 
             cell.setup(hobbyType: .myHobby)
@@ -98,6 +99,12 @@ class StartSearchViewController: UIViewController {
                 } else {
                     self.view.makeToast("최소 한 자 이상, 최대 8글자까지 작성 가능합니다", duration: 1.0, position: .center, style: self.style)
                 }
+            }
+            .disposed(by: disposeBag)
+        
+        output.startSearchTapped
+            .subscribe { _ in
+                // 새싹 찾기 시작 버튼 탭
             }
             .disposed(by: disposeBag)
     }

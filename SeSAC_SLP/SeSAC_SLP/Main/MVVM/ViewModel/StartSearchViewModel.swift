@@ -27,7 +27,8 @@ class StartSearchViewModel {
     struct Input {
         let aroundQueue: PublishSubject<AroundQueue>
         let myHobbyText: ControlProperty<String?>
-        let tap: ControlEvent<Void>
+        let returnTap: ControlEvent<Void>
+        let startSearchTap: ControlEvent<Void>
     }
 
     struct Output {
@@ -37,6 +38,7 @@ class StartSearchViewModel {
         //let myHobby: Observable<[String]>
         let myHobbyLengthValid: Observable<Bool>
         let returnTapped: ControlEvent<Void>
+        let startSearchTapped: ControlEvent<Void>
     }
 
     func transform(input: Input) -> Output {
@@ -73,7 +75,7 @@ class StartSearchViewModel {
         valid.bind(to: self.valid).disposed(by: disposeBag)
 
 
-        return Output(recommendHobby: recommendHobby, nearHobby: nearHobby, othersHobby: othersHobby, myHobbyLengthValid: valid, returnTapped: input.tap)
+        return Output(recommendHobby: recommendHobby, nearHobby: nearHobby, othersHobby: othersHobby, myHobbyLengthValid: valid, returnTapped: input.returnTap, startSearchTapped: input.startSearchTap)
     }
     
     func addMyHobbyArray(string: String) {
