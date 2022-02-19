@@ -15,6 +15,7 @@ enum APITarget { // 토큰 쿼리 파라미터 바디 모두 입력
     case updateFCMtoken(idtoken: String, FCMtoken: String)
     case upsdateMypage(idtoken: String, searchable: Int, ageMin: Int, ageMax: Int, gender: Int, hobby: String)
     case onqueue(idtoken: String, region: Int, lat: Double, long: Double)
+    case queue(idtoken: String, type: Int, region: Int, lat: Double, long: Double, hf: [String])
 }
 
 extension APITarget: TargetType {
@@ -34,12 +35,14 @@ extension APITarget: TargetType {
             return "/user/update/mypage"
         case .onqueue:
             return "/queue/onqueue"
+        case .queue:
+            return "/queue"
         }
     }
     
     var method: Moya.Method { // 각 CRUD
         switch self {
-        case .signup, .deleteUser, .upsdateMypage, .onqueue:
+        case .signup, .deleteUser, .upsdateMypage, .onqueue, .queue:
             return .post
         case .login:
             return .get
@@ -64,12 +67,14 @@ extension APITarget: TargetType {
             return .requestParameters(parameters: ["searchable": searchable, "ageMin": ageMin, "ageMax": ageMax, "gender": gender, "hobby": hobby], encoding: JSONEncoding.default)
         case .onqueue(_, let region, let lat, let long):
             return .requestParameters(parameters: ["region": region, "lat": lat, "long": long], encoding: JSONEncoding.default)
+        case .queue(_, let type, let region, let lat, let long, let hf):
+            return .requestParameters(parameters: ["type": type, "region": region, "lat": lat, "long": long, "hf": hf], encoding: JSONEncoding.default)
         }
     }
     
     var headers: [String : String]? {
         switch self {
-        case .signup(let idtoken, _,_,_,_,_,_), .login(let idtoken), .deleteUser(let idtoken), .updateFCMtoken(let idtoken, _), .upsdateMypage(let idtoken, _,_,_,_,_), .onqueue(let idtoken,_,_,_):
+        case .signup(let idtoken, _,_,_,_,_,_), .login(let idtoken), .deleteUser(let idtoken), .updateFCMtoken(let idtoken, _), .upsdateMypage(let idtoken, _,_,_,_,_), .onqueue(let idtoken,_,_,_), .queue(let idtoken,_,_,_,_,_):
             return ["Content-Type" : "application/json", "idtoken" : idtoken]
         }
     }

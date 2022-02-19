@@ -29,6 +29,7 @@
 		B80A0C5627971C1C004E1BB3 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80A0C5527971C1C004E1BB3 /* UIButton+Extension.swift */; };
 		B80A0C5827971CC0004E1BB3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80A0C5727971CC0004E1BB3 /* UIView+Extension.swift */; };
 		B80A0C5A279720C2004E1BB3 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80A0C59279720C2004E1BB3 /* CustomTextField.swift */; };
+		B80F4E9C27C0E14000D02121 /* StartSearchHTTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80F4E9B27C0E14000D02121 /* StartSearchHTTPViewModel.swift */; };
 		B816DB1327B2D23B00BC16E3 /* MainCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B816DB1227B2D23B00BC16E3 /* MainCase.swift */; };
 		B816DB1527B2F1DF00BC16E3 /* MapHTTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B816DB1427B2F1DF00BC16E3 /* MapHTTPViewModel.swift */; };
 		B816DB1727B2F4CE00BC16E3 /* AroundUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B816DB1627B2F4CE00BC16E3 /* AroundUser.swift */; };
@@ -125,6 +126,7 @@
 		B80A0C5527971C1C004E1BB3 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		B80A0C5727971CC0004E1BB3 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B80A0C59279720C2004E1BB3 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		B80F4E9B27C0E14000D02121 /* StartSearchHTTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSearchHTTPViewModel.swift; sourceTree = "<group>"; };
 		B816DB1227B2D23B00BC16E3 /* MainCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCase.swift; sourceTree = "<group>"; };
 		B816DB1427B2F1DF00BC16E3 /* MapHTTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHTTPViewModel.swift; sourceTree = "<group>"; };
 		B816DB1627B2F4CE00BC16E3 /* AroundUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundUser.swift; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 				B84EBD8627B139A80000A137 /* MapViewModel.swift */,
 				B816DB1427B2F1DF00BC16E3 /* MapHTTPViewModel.swift */,
 				B8E1FA7F27B6DED20049D80D /* StartSearchViewModel.swift */,
+				B80F4E9B27C0E14000D02121 /* StartSearchHTTPViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -815,6 +818,7 @@
 				B8452E8D27A44FA300C9BC06 /* MyProfileViewController.swift in Sources */,
 				B80A0C5627971C1C004E1BB3 /* UIButton+Extension.swift in Sources */,
 				B8F36F6B27990B5A0088628B /* NicknameViewController.swift in Sources */,
+				B80F4E9C27C0E14000D02121 /* StartSearchHTTPViewModel.swift in Sources */,
 				B8FEABC42798467400441440 /* SignupCustomInputView.swift in Sources */,
 				B8452E8127A3C55500C9BC06 /* MyInfoViewModel.swift in Sources */,
 				B8452E8627A3C97500C9BC06 /* MyProfileCell.swift in Sources */,

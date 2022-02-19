@@ -33,6 +33,13 @@ struct APIService {
         
         requestResultData(target, completion: completion)
     }
+    
+//    func queue(_ type: Int, _ region: Int, _ lat: Double, _ long: Double, hf: [String], completion: @escaping (NetworkResult<>) -> Void) {
+//
+//        let target: APITarget = .queue(idtoken: UserDefaults.idToken, type: type, region: region, lat: lat, long: long, hf: hf)
+//
+//        requestResultData(target, completion: completion)
+//    }
 }
 
 extension APIService {
