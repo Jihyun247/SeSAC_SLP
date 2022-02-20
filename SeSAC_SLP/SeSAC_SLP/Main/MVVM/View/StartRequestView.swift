@@ -1,5 +1,5 @@
 //
-//  StartSearchView.swift
+//  StartRequestView.swift
 //  SeSAC_SLP
 //
 //  Created by 김지현 on 2022/02/12.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class StartSearchView: UIView {
+class StartRequestView: UIView {
     
     let deviceWidthRatio = UIScreen.main.bounds.width / 375
     let deviceHeightRatio = UIScreen.main.bounds.height / 812

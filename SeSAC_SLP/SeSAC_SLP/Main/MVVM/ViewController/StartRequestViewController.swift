@@ -1,17 +1,16 @@
 //
-//  StartSearchViewController.swift
+//  StartRequestViewController.swift
 //  SeSAC_SLP
 //
 //  Created by 김지현 on 2022/02/11.
 //
 
-import Foundation
 import UIKit
 import RxSwift
 import RxGesture
 import Toast
 
-class StartSearchViewController: UIViewController {
+class StartRequestViewController: UIViewController {
     
     // MARK: - 인스턴스
     var style: ToastStyle = {
@@ -22,8 +21,8 @@ class StartSearchViewController: UIViewController {
         return style
     }()
     
-    let mainView = StartSearchView()
-    let viewModel = StartSearchViewModel()
+    let mainView = StartRequestView()
+    let viewModel = StartRequestViewModel()
     let queuehttpViewModel = QueueHTTPViewModel()
     let onqueueHttpViewModel = OnQueueHTTPViewModel()
     
@@ -57,7 +56,7 @@ class StartSearchViewController: UIViewController {
         
         //MARK: - ViewModel binding
         
-        let input = StartSearchViewModel.Input(aroundQueue: onqueueHttpViewModel.exploreResult, myHobbyText: mainView.searchBar.rx.text, returnTap: mainView.searchBar.searchTextField.rx.controlEvent(.editingDidEndOnExit), startSearchTap: mainView.startSearchButton.rx.tap)
+        let input = StartRequestViewModel.Input(aroundQueue: onqueueHttpViewModel.exploreResult, myHobbyText: mainView.searchBar.rx.text, returnTap: mainView.searchBar.searchTextField.rx.controlEvent(.editingDidEndOnExit), startSearchTap: mainView.startSearchButton.rx.tap)
         let output = viewModel.transform(input: input)
         
         output.othersHobby.bind(to: mainView.otherHobbyCollectionView.rx.items(cellIdentifier: HobbyCollectionViewCell.identifier, cellType: HobbyCollectionViewCell.self)) { (row, element, cell) in
@@ -123,7 +122,7 @@ class StartSearchViewController: UIViewController {
                         switch status {
                             
                         case HTTPStatusCode.OK.rawValue:
-                            self.navigationController?.pushViewController(ResultSearchViewController(), animated: true)
+                            self.navigationController?.pushViewController(ResultRequestViewController(), animated: true)
                         case QueueStatusCode.ALREADY_THREE_REPORT.rawValue:
                             self.view.makeToast("신고가 누적되어 이용하실 수 없습니다.")
                         case QueueStatusCode.FIRST_PENALTY.rawValue:
@@ -158,7 +157,7 @@ class StartSearchViewController: UIViewController {
 
 //MARK: - CollectionView Delegate FlowLayout
 
-extension StartSearchViewController: UICollectionViewDelegateFlowLayout {
+extension StartRequestViewController: UICollectionViewDelegateFlowLayout {
  
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         

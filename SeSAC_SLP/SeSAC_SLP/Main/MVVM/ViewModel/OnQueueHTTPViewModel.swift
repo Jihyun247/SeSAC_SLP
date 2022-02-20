@@ -1,5 +1,5 @@
 //
-//  MapHTTPViewModel.swift
+//  OnQueueHTTPViewModel.swift
 //  SeSAC_SLP
 //
 //  Created by 김지현 on 2022/02/09.
@@ -8,8 +8,6 @@
 import Foundation
 import RxSwift
 import RxCocoa
-import Firebase
-import FirebaseAuth
 
 class OnQueueHTTPViewModel {
 

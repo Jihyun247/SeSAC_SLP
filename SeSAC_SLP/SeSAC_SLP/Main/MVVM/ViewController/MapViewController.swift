@@ -5,7 +5,6 @@
 //  Created by 김지현 on 2022/01/26.
 //
 
-import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
@@ -86,12 +85,12 @@ class MapViewController: UIViewController {
                         selectedNVC?.pushViewController(MyProfileViewController(), animated: true)
                     }
                 } else {
-                    let vc = StartSearchViewController()
+                    let vc = StartRequestViewController()
                     vc.viewModel.matchingStatus.onNext(self.viewModel.matchingStatus.value)
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
             case .waiting:
-                self.navigationController?.pushViewController(ResultSearchViewController(), animated: true)
+                self.navigationController?.pushViewController(ResultRequestViewController(), animated: true)
             case .matched:
                 self.navigationController?.pushViewController(ChatViewController(), animated: true)
             case .none:

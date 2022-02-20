@@ -1,5 +1,5 @@
 //
-//  StartSearchHTTPViewModel.swift
+//  QueueHTTPViewModel.swift
 //  SeSAC_SLP
 //
 //  Created by 김지현 on 2022/02/19.
@@ -8,8 +8,6 @@
 import Foundation
 import RxSwift
 import RxCocoa
-import Firebase
-import FirebaseAuth
 
 class QueueHTTPViewModel {
     
