@@ -10,27 +10,21 @@ import RxSwift
 import RxCocoa
 import Firebase
 import FirebaseAuth
-import AVFoundation
 
-class StartSearchHTTPViewModel {
-
-    let searchResult = PublishSubject<AroundQueue>()
+class QueueHTTPViewModel {
     
-    func onqueue(region: Int, lat: Double, long: Double) {
-        APIService.shared.onqueue(region, lat, long) { result in
+    let queueResult = PublishSubject<Int>()
+    
+    func queue(region: Int, lat: Double, long: Double, hf: [String]) {
+        APIService.shared.queue(region, lat, long, hf: hf) { result in
             switch result {
                 
-            case .success(let data):
-                guard let exploreData = data else {
-                    print("결과 없음")
-                    return
-                }
-                //print(exploreData)
-                self.exploreResult.onNext(exploreData)
+            case .success(_):
+                self.queueResult.onNext(HTTPStatusCode.OK.rawValue)
             case .tokenExpiration:
-                self.onqueue(region: region, lat: lat, long: long)
+                self.queue(region: region, lat: lat, long: long, hf: hf)
             case .uncommon(let statusCode):
-                print(statusCode)
+                self.queueResult.onNext(statusCode)
             case .fail:
                 print("fail")
             }

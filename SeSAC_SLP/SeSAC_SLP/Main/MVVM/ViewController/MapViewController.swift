@@ -17,7 +17,7 @@ class MapViewController: UIViewController {
     // MARK: - 인스턴스
     let mainView = MapView(status: .general)
     let viewModel = MapViewModel()
-    let httpViewModel = MapHTTPViewModel()
+    let httpViewModel = OnQueueHTTPViewModel()
     
     let disposeBag = DisposeBag()
     

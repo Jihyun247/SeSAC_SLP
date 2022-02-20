@@ -10,9 +10,8 @@ import RxSwift
 import RxCocoa
 import Firebase
 import FirebaseAuth
-import AVFoundation
 
-class MapHTTPViewModel {
+class OnQueueHTTPViewModel {
 
     let exploreResult = PublishSubject<AroundQueue>()
     
