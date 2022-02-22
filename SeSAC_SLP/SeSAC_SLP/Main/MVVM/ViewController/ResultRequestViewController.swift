@@ -55,21 +55,7 @@ class ResultRequestViewController: TabmanViewController {
     
     func binding() {
         
-        mainView.changeHobbyButton.rx.tap
-            .subscribe { _ in
-                // delete queue http
-                DispatchQueue.main.async {
-                    self.navigationController?.pushViewController(StartRequestViewController(), animated: true)
-                }
-            }
-            .disposed(by: disposeBag)
         
-        mainView.refreshButton.rx.tap
-            .subscribe { _ in
-                // onqueue http
-                print("refresh button")
-            }
-            .disposed(by: disposeBag)
     }
 }
 

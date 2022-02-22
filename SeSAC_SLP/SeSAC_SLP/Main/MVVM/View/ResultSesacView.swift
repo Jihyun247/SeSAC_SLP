@@ -21,6 +21,9 @@ class ResultSesacView: UIView {
     let subGuideLabel = UILabel()
     let sesacImageView = UIImageView()
     
+    let changeHobbyButton = UIButton()
+    let refreshButton = UIButton()
+    
     let sesacTableView = UITableView()
     
     
@@ -43,20 +46,24 @@ class ResultSesacView: UIView {
     
     func setup(status: ResultViewType) {
 
-        
         switch status {
         case .near:
             guideLabel.display1(text: "아쉽게도 주변에 새싹이 없어요ㅠ", textColor: .sesacBlack)
         case .received:
             guideLabel.display1(text: "아직 받은 요청이 없어요ㅠ", textColor: .sesacBlack)
         }
+        
         sesacImageView.image = UIImage(named: "nosesac")
         subGuideLabel.title4(text: "취미를 변경하거나 조금만 더 기다려 주세요!", textColor: .sesacGray7)
-        sesacTableView.isHidden = true
+        
+        changeHobbyButton.fill(text: "취미 변경하기", radiusStatus: true)
+        refreshButton.setImage(UIImage(named: "bt_refresh"), for: .normal)
+        
+        sesacTableView.separatorColor = .clear
+        sesacTableView.register(ProfileCardTableViewCell.self, forCellReuseIdentifier: ProfileCardTableViewCell.identifier)
         
         [noSesacView, sesacTableView].forEach { self.addSubview($0) }
-        [guideLabel, subGuideLabel, sesacImageView].forEach { noSesacView.addSubview($0) }
-        
+        [guideLabel, subGuideLabel, sesacImageView, changeHobbyButton, refreshButton].forEach { noSesacView.addSubview($0) }
     }
     
     func constraints() {
@@ -82,11 +89,21 @@ class ResultSesacView: UIView {
             make.centerX.equalToSuperview()
         }
         
+        changeHobbyButton.snp.makeConstraints { make in
+            make.leading.bottom.equalToSuperview().inset(16)
+            make.height.equalTo(48)
+            make.trailing.equalTo(refreshButton.snp.leading).offset(-8)
+        }
+        
+        refreshButton.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(16)
+            make.centerY.equalTo(changeHobbyButton.snp.centerY)
+            make.size.equalTo(48)
+        }
+        
         sesacTableView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
             make.bottom.equalTo(self.safeAreaLayoutGuide)
         }
-        
-        
     }
 }

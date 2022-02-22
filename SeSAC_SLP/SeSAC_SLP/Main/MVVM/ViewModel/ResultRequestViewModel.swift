@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class ResultRequestViewModel {
+class ResultRequestViewModel { // 탭맨 뷰모델 -> 타이머 ?
     
     let disposeBag = DisposeBag()
     

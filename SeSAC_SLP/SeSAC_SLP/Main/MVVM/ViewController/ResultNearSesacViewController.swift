@@ -33,5 +33,45 @@ class ResultNearSesacViewController: UIViewController {
     
     func binding() {
         
+        let input = ResultSesacViewModel.Input(aroundQueue: onqueueHttpViewModel.exploreResult)
+        let output = viewModel.transform(input: input)
+        
+        output.nearSesac.bind(to: mainView.sesacTableView.rx.items(cellIdentifier: ProfileCardTableViewCell.identifier, cellType: ProfileCardTableViewCell.self)) { (row, element, cell) in
+            print("??")
+            cell.setup(status: .near, hobby: element.hf)
+            cell.backgroundImageView.image = UIImage(named: "sesac_background_\(element.background+1)")
+            cell.sesacImageView.image = UIImage(named: "sesac_face_\(element.sesac+1)")
+            cell.nicknameLabel.text = element.nick
+            cell.arrowButton.rx.tap
+                .subscribe { _ in
+                    if cell.isOpened {
+                        cell.detailStackView.isHidden = true
+                        cell.layoutIfNeeded()
+                        cell.isOpened = false
+                    } else {
+                        cell.detailStackView.isHidden = false
+                        cell.layoutIfNeeded()
+                        cell.isOpened = true
+                    }
+                }
+                .disposed(by: cell.disposeBag)
+        }
+        .disposed(by: disposeBag)
+        
+        mainView.changeHobbyButton.rx.tap
+            .subscribe { _ in
+                // delete queue http
+                DispatchQueue.main.async {
+                    self.navigationController?.pushViewController(StartRequestViewController(), animated: true)
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        mainView.refreshButton.rx.tap
+            .subscribe { _ in
+                // onqueue http
+                print("refresh button")
+            }
+            .disposed(by: disposeBag)
     }
 }

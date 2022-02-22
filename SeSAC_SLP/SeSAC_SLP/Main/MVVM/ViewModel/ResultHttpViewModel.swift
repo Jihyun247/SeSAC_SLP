@@ -11,5 +11,5 @@ import RxCocoa
 
 class ResultHttpViewModel {
     
-    // refresh
+    //
 }

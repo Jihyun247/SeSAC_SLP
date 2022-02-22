@@ -14,15 +14,17 @@ class ResultSesacViewModel {
     let disposeBag = DisposeBag()
     
     struct Input {
-
+        let aroundQueue: PublishSubject<AroundQueue>
     }
 
     struct Output {
-
+        let nearSesac: Observable<[AroundUser]>
     }
 
     func transform(input: Input) -> Output {
         
-        return Output()
+        let nearSesac = input.aroundQueue.map { $0.fromQueueDB }
+        
+        return Output(nearSesac: nearSesac)
     }
 }

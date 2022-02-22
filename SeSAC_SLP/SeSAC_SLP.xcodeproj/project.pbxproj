@@ -38,6 +38,7 @@
 		B82037CE27AA980B00B3BC4A /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82037CD27AA980B00B3BC4A /* CustomTabBar.swift */; };
 		B82037D027AA9B0900B3BC4A /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82037CF27AA9B0900B3BC4A /* MyProfileView.swift */; };
 		B82037D227AA9B1600B3BC4A /* MyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82037D127AA9B1600B3BC4A /* MyProfileViewModel.swift */; };
+		B82988F727C4EF0D001C54CF /* CustomUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82988F627C4EF0D001C54CF /* CustomUIView.swift */; };
 		B837C7F827C21B8500B61260 /* ResultRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B837C7F727C21B8500B61260 /* ResultRequestViewModel.swift */; };
 		B837C7FA27C21B9500B61260 /* ResultRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B837C7F927C21B9500B61260 /* ResultRequestView.swift */; };
 		B837C7FD27C250C400B61260 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = B837C7FC27C250C400B61260 /* Tabman */; };
@@ -143,6 +144,7 @@
 		B82037CD27AA980B00B3BC4A /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		B82037CF27AA9B0900B3BC4A /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		B82037D127AA9B1600B3BC4A /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
+		B82988F627C4EF0D001C54CF /* CustomUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIView.swift; sourceTree = "<group>"; };
 		B837C7F727C21B8500B61260 /* ResultRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRequestViewModel.swift; sourceTree = "<group>"; };
 		B837C7F927C21B9500B61260 /* ResultRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRequestView.swift; sourceTree = "<group>"; };
 		B837C7FE27C2785900B61260 /* ResultNearSesacViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultNearSesacViewController.swift; sourceTree = "<group>"; };
@@ -405,9 +407,9 @@
 				B8A54DCC27A171A8005DB56F /* MapViewController.swift */,
 				B8E1FA7727B640070049D80D /* StartRequestViewController.swift */,
 				B8E1FA7927B640120049D80D /* ResultRequestViewController.swift */,
-				B8E1FA7B27B6401A0049D80D /* ChatViewController.swift */,
 				B837C7FE27C2785900B61260 /* ResultNearSesacViewController.swift */,
 				B837C80027C2788600B61260 /* ResultReceivedViewController.swift */,
+				B8E1FA7B27B6401A0049D80D /* ChatViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -704,6 +706,7 @@
 				B843159927B8F5BD00A6050A /* HobbyButton.swift */,
 				B843159B27B9892C00A6050A /* DynamicHeightCollectionView.swift */,
 				B8391B9327BACBF500330B9C /* LeftAlignedCollectionView.swift */,
+				B82988F627C4EF0D001C54CF /* CustomUIView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -900,6 +903,7 @@
 				B84EBD8727B139A80000A137 /* MapViewModel.swift in Sources */,
 				B80A0C52279719EA004E1BB3 /* SignupView.swift in Sources */,
 				B8F36F6D27990B9F0088628B /* BirthViewController.swift in Sources */,
+				B82988F727C4EF0D001C54CF /* CustomUIView.swift in Sources */,
 				B816DB1B27B327F500BC16E3 /* Int+Extension.swift in Sources */,
 				B80A0C372796C4DE004E1BB3 /* UIColor+Extension.swift in Sources */,
 				B8391B9427BACBF500330B9C /* LeftAlignedCollectionView.swift in Sources */,

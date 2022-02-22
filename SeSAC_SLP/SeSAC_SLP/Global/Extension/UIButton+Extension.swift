@@ -77,4 +77,19 @@ extension UIButton {
         self.setBorderColorAndRadius(borderColor: .sesacGray4, borderWidth: 1, cornerRadius: 8)
     }
     
+    func requestMatching() {
+        self.titleLabel?.font = .title3_M14
+        self.setTitle("요청하기", for: .normal)
+        self.setTitleColor(.white, for: .normal)
+        self.setBackgroundColor(.error, for: .normal)
+        self.setBorderColorAndRadius(cornerRadius: 8.0)
+    }
+    
+    func receiveMatching() {
+        self.titleLabel?.font = .title3_M14
+        self.setTitle("수락하기", for: .normal)
+        self.setTitleColor(.white, for: .normal)
+        self.setBackgroundColor(.success, for: .normal)
+        self.setBorderColorAndRadius(cornerRadius: 8.0)
+    }
 }
