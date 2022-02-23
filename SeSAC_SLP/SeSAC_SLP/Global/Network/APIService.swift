@@ -40,6 +40,13 @@ struct APIService {
 
         requestResultNoData(target, completion: completion)
     }
+    
+    func deleteQueue(completion: @escaping (NetworkResult<Void>) -> Void) {
+        
+        let target: APITarget = .deleteQueue(idtoken: UserDefaults.idToken)
+        
+        requestResultNoData(target, completion: completion)
+    }
 }
 
 extension APIService {

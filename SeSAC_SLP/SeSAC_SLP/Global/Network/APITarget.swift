@@ -16,6 +16,7 @@ enum APITarget { // 토큰 쿼리 파라미터 바디 모두 입력
     case upsdateMypage(idtoken: String, searchable: Int, ageMin: Int, ageMax: Int, gender: Int, hobby: String)
     case onqueue(idtoken: String, region: Int, lat: Double, long: Double)
     case queue(idtoken: String, type: Int, region: Int, lat: Double, long: Double, hf: [String])
+    case deleteQueue(idtoken: String)
 }
 
 extension APITarget: TargetType {
@@ -35,7 +36,7 @@ extension APITarget: TargetType {
             return "/user/update/mypage"
         case .onqueue:
             return "/queue/onqueue"
-        case .queue:
+        case .queue, .deleteQueue:
             return "/queue"
         }
     }
@@ -48,6 +49,8 @@ extension APITarget: TargetType {
             return .get
         case .updateFCMtoken:
             return .put
+        case .deleteQueue:
+            return .delete
         }
     }
     
@@ -57,7 +60,7 @@ extension APITarget: TargetType {
     
     var task: Task { // 바디는 JSONEncoding.default, 쿼리가 들어가면 URLEncoding.queryString, 이미지는 .uploadMultipart
         switch self {
-        case .login, .deleteUser:
+        case .login, .deleteUser, .deleteQueue:
             return .requestPlain
         case .signup(_, let phoneNumber, let FCMtoken, let nick, let birth, let email, let gender):
             return .requestParameters(parameters: ["phoneNumber": phoneNumber, "FCMtoken": FCMtoken, "nick": nick, "birth": birth, "email": email, "gender": gender], encoding: JSONEncoding.default)
@@ -74,10 +77,8 @@ extension APITarget: TargetType {
     
     var headers: [String : String]? {
         switch self {
-        case .signup(let idtoken, _,_,_,_,_,_), .login(let idtoken), .deleteUser(let idtoken), .updateFCMtoken(let idtoken, _), .upsdateMypage(let idtoken, _,_,_,_,_), .onqueue(let idtoken,_,_,_), .queue(let idtoken,_,_,_,_,_):
+        case .signup(let idtoken, _,_,_,_,_,_), .login(let idtoken), .deleteUser(let idtoken), .updateFCMtoken(let idtoken, _), .upsdateMypage(let idtoken, _,_,_,_,_), .onqueue(let idtoken,_,_,_), .queue(let idtoken,_,_,_,_,_), .deleteQueue(let idtoken):
             return ["Content-Type" : "application/json", "idtoken" : idtoken]
         }
     }
-    
-    
 }
