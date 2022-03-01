@@ -13,6 +13,7 @@ class ResultNearSesacViewController: UIViewController {
     let mainView = ResultSesacView(status: .near)
     let viewModel = ResultSesacViewModel()
     let onqueueHttpViewModel = OnQueueHTTPViewModel()
+    let resultHttpViewModel = ResultHttpViewModel()
     
     let disposeBag = DisposeBag()
     
@@ -46,11 +47,13 @@ class ResultNearSesacViewController: UIViewController {
                 .subscribe { _ in
                     if cell.isOpened {
                         cell.detailStackView.isHidden = true
-                        cell.layoutIfNeeded()
+                        cell.layoutSubviews()
+                        //cell.layoutIfNeeded()
                         cell.isOpened = false
                     } else {
                         cell.detailStackView.isHidden = false
-                        cell.layoutIfNeeded()
+                        cell.layoutSubviews()
+                        //cell.layoutIfNeeded()
                         cell.isOpened = true
                     }
                 }
@@ -60,7 +63,7 @@ class ResultNearSesacViewController: UIViewController {
         
         mainView.changeHobbyButton.rx.tap
             .subscribe { _ in
-                // delete queue http
+                self.resultHttpViewModel.deleteQueue()
                 DispatchQueue.main.async {
                     self.navigationController?.pushViewController(StartRequestViewController(), animated: true)
                 }
@@ -69,8 +72,7 @@ class ResultNearSesacViewController: UIViewController {
         
         mainView.refreshButton.rx.tap
             .subscribe { _ in
-                // onqueue http
-                print("refresh button")
+                self.onqueueHttpViewModel.onqueue(region: UserDefaults.region, lat: UserDefaults.lat, long: UserDefaults.long)
             }
             .disposed(by: disposeBag)
     }

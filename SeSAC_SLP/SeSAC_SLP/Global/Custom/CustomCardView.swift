@@ -13,7 +13,7 @@ class ProfileCardTableViewCell: UITableViewCell {
     static let identifier = "ProfileCardTableViewCell"
     
     var disposeBag = DisposeBag()
-    var isOpened: Bool = false
+    var isOpened: Bool = true
     var hobbyData = PublishSubject<[String]>()
     
     let deviceWidthRatio = UIScreen.main.bounds.width / 375
