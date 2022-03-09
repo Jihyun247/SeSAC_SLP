@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 
 class ResultNearSesacViewController: UIViewController {
-    
+
     let mainView = ResultSesacView(status: .near)
     let viewModel = ResultSesacViewModel()
     let onqueueHttpViewModel = OnQueueHTTPViewModel()

@@ -13,6 +13,7 @@ class ResultReceivedViewController: UIViewController {
     let mainView = ResultSesacView(status: .received)
     let viewModel = ResultSesacViewModel()
     let onqueueHttpViewModel = OnQueueHTTPViewModel()
+    let resultHttpViewModel = ResultHttpViewModel()
     
     let disposeBag = DisposeBag()
     
@@ -32,6 +33,49 @@ class ResultReceivedViewController: UIViewController {
     }
     
     func binding() {
+        
+        // near와 똑같은 구조
+//        let input = ResultSesacViewModel.Input(aroundQueue: onqueueHttpViewModel.exploreResult)
+//        let output = viewModel.transform(input: input)
+//
+//        output.nearSesac.bind(to: mainView.sesacTableView.rx.items(cellIdentifier: ProfileCardTableViewCell.identifier, cellType: ProfileCardTableViewCell.self)) { (row, element, cell) in
+//            print("??")
+//            cell.setup(status: .near, hobby: element.hf)
+//            cell.backgroundImageView.image = UIImage(named: "sesac_background_\(element.background+1)")
+//            cell.sesacImageView.image = UIImage(named: "sesac_face_\(element.sesac+1)")
+//            cell.nicknameLabel.text = element.nick
+//            cell.arrowButton.rx.tap
+//                .subscribe { _ in
+//                    if cell.isOpened {
+//                        cell.detailStackView.isHidden = true
+//                        cell.layoutSubviews()
+//                        //cell.layoutIfNeeded()
+//                        cell.isOpened = false
+//                    } else {
+//                        cell.detailStackView.isHidden = false
+//                        cell.layoutSubviews()
+//                        //cell.layoutIfNeeded()
+//                        cell.isOpened = true
+//                    }
+//                }
+//                .disposed(by: cell.disposeBag)
+//        }
+//        .disposed(by: disposeBag)
+//
+//        mainView.changeHobbyButton.rx.tap
+//            .subscribe { _ in
+//                self.resultHttpViewModel.deleteQueue()
+//                DispatchQueue.main.async {
+//                    self.navigationController?.pushViewController(StartRequestViewController(), animated: true)
+//                }
+//            }
+//            .disposed(by: disposeBag)
+//
+//        mainView.refreshButton.rx.tap
+//            .subscribe { _ in
+//                self.onqueueHttpViewModel.onqueue(region: UserDefaults.region, lat: UserDefaults.lat, long: UserDefaults.long)
+//            }
+//            .disposed(by: disposeBag)
         
     }
 }
