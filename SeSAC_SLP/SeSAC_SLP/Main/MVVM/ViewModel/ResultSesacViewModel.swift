@@ -19,12 +19,15 @@ class ResultSesacViewModel {
 
     struct Output {
         let nearSesac: Observable<[AroundUser]>
+        let receivedSesac: Observable<[AroundUser]>
     }
 
     func transform(input: Input) -> Output {
         
         let nearSesac = input.aroundQueue.map { $0.fromQueueDB }
         
-        return Output(nearSesac: nearSesac)
+        let receivedSesac = input.aroundQueue.map { $0.fromQueueDBRequested }
+        
+        return Output(nearSesac: nearSesac, receivedSesac: receivedSesac)
     }
 }
