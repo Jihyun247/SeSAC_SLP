@@ -34,7 +34,6 @@ class ResultReceivedViewController: UIViewController {
     
     func binding() {
         
-        // near와 똑같은 구조
         let input = ResultSesacViewModel.Input(aroundQueue: onqueueHttpViewModel.exploreResult)
         let output = viewModel.transform(input: input)
 
@@ -49,12 +48,10 @@ class ResultReceivedViewController: UIViewController {
                     if cell.isOpened {
                         cell.detailStackView.isHidden = true
                         cell.layoutSubviews()
-                        //cell.layoutIfNeeded()
                         cell.isOpened = false
                     } else {
                         cell.detailStackView.isHidden = false
                         cell.layoutSubviews()
-                        //cell.layoutIfNeeded()
                         cell.isOpened = true
                     }
                 }
