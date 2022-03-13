@@ -49,7 +49,6 @@ class ResultNearSesacViewController: UIViewController {
                         cell.detailStackView.isHidden = true
                         cell.layoutSubviews()
                         // cell 클릭 후 이동시 접히게되는 이슈
-                        //cell.layoutIfNeeded()
                         cell.isOpened = false
                     } else {
                         cell.detailStackView.isHidden = false
