@@ -7,12 +7,14 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class ProfileCardTableViewCell: UITableViewCell {
     
     static let identifier = "ProfileCardTableViewCell"
     
     var disposeBag = DisposeBag()
+    var status: ResultViewType = .near
     var isOpened: Bool = true
     var hobbyData = PublishSubject<[String]>()
     
@@ -62,8 +64,9 @@ class ProfileCardTableViewCell: UITableViewCell {
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-            super.init(style: style, reuseIdentifier: reuseIdentifier)
-        }
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setup(status: .near, hobby: [])
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -71,8 +74,12 @@ class ProfileCardTableViewCell: UITableViewCell {
     
     func setup(status: ResultViewType, hobby: [String]) {
         
+        print("setup")
+        
         layoutIfNeeded()
         selectionStyle = .none
+        
+        self.status = status
         
         backgroundImageView.image = UIImage(named: "sesac_background_1")
         backgroundImageView.setBorderColorAndRadius(cornerRadius: 8.0)
@@ -81,13 +88,9 @@ class ProfileCardTableViewCell: UITableViewCell {
         
         status == .near ? matchingButton.requestMatching() : matchingButton.receiveMatching()
         
-        contentView.addSubview(sesacCardView)
-        [backgroundImageView, sesacImageView, matchingButton].forEach { sesacCardView.addSubview($0) }
-        
         openableStackView.setBorderColorAndRadius(borderColor: .sesacGray2, borderWidth: 1, cornerRadius: 8.0)
         
         openableStackView.axis = .vertical
-        //openableStackView.alignment = .fill
         openableStackView.distribution = .fillProportionally
         
         if isOpened {
@@ -96,13 +99,8 @@ class ProfileCardTableViewCell: UITableViewCell {
             detailStackView.isHidden = true
         }
         
-        contentView.addSubview(openableStackView)
-        [nicknameView, detailStackView].forEach { openableStackView.addArrangedSubview($0) }
-        
         nicknameLabel.title1(text: "사또밥", textColor: .sesacBlack)
         arrowButton.setImage(UIImage(named: "downside_arrow"), for: .normal)
-        
-        [nicknameLabel, arrowButton].forEach { nicknameView.addSubview($0) }
         
         sesacTitleLabel.title6(text: "새싹 타이틀", textColor: .sesacBlack)
         hobbyLabel.title6(text: "하고 싶은 취미", textColor: .sesacBlack)
@@ -123,6 +121,12 @@ class ProfileCardTableViewCell: UITableViewCell {
         //detailStackView.alignment = .fill
         detailStackView.distribution = .fillProportionally
         
+        contentView.addSubview(sesacCardView)
+        [backgroundImageView, sesacImageView, matchingButton].forEach { sesacCardView.addSubview($0) }
+        contentView.addSubview(openableStackView)
+        [nicknameView, detailStackView].forEach { openableStackView.addArrangedSubview($0) }
+        [nicknameLabel, arrowButton].forEach { nicknameView.addSubview($0) }
+        
         [sesacTitleView, hobbyView, reviewView].forEach { detailStackView.addArrangedSubview($0) }
         [sesacTitleLabel, sesacTitleCollectionView].forEach { sesacTitleView.addSubview($0) }
         [hobbyLabel, hobbyCollectionView].forEach { hobbyView.addSubview($0) }
@@ -130,12 +134,12 @@ class ProfileCardTableViewCell: UITableViewCell {
         
         constraints()
     }
-    
+ 
     func constraints() {
-        
+
         sesacCardView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview().inset(16)
-            make.height.greaterThanOrEqualTo(194)
+            make.height.equalTo(194)
         }
         
         backgroundImageView.snp.makeConstraints { make in
@@ -199,6 +203,7 @@ class ProfileCardTableViewCell: UITableViewCell {
         hobbyView.snp.makeConstraints { make in
             make.top.equalTo(sesacTitleView.snp.bottom)
             make.leading.trailing.equalToSuperview()
+            make.height.equalTo(100)
         }
         
         hobbyLabel.snp.makeConstraints { make in
@@ -226,7 +231,7 @@ class ProfileCardTableViewCell: UITableViewCell {
         reviewArrowImageView.snp.makeConstraints { make in
             make.centerY.equalTo(reviewLabel.snp.centerY)
             make.size.equalTo(16)
-            make.trailing.equalToSuperview().inset(16)
+            make.trailing.equalToSuperview().inset(-16)
         }
         
         latestReviewLabel.snp.makeConstraints { make in

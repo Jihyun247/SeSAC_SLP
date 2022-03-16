@@ -1,5 +1,5 @@
 //
-//  ResultReceivedViewController.swift
+//  ResultReceivedSesacViewController.swift
 //  SeSAC_SLP
 //
 //  Created by 김지현 on 2022/02/20.
@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-class ResultReceivedViewController: UIViewController {
+class ResultReceivedSesacViewController: UIViewController {
     
     let mainView = ResultSesacView(status: .received)
     let viewModel = ResultSesacViewModel()

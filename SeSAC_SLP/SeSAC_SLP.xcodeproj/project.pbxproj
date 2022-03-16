@@ -43,7 +43,7 @@
 		B837C7FA27C21B9500B61260 /* ResultRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B837C7F927C21B9500B61260 /* ResultRequestView.swift */; };
 		B837C7FD27C250C400B61260 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = B837C7FC27C250C400B61260 /* Tabman */; };
 		B837C7FF27C2785900B61260 /* ResultNearSesacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B837C7FE27C2785900B61260 /* ResultNearSesacViewController.swift */; };
-		B837C80127C2788600B61260 /* ResultReceivedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B837C80027C2788600B61260 /* ResultReceivedViewController.swift */; };
+		B837C80127C2788600B61260 /* ResultReceivedSesacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B837C80027C2788600B61260 /* ResultReceivedSesacViewController.swift */; };
 		B837C80327C29D9600B61260 /* ResultSesacView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B837C80227C29D9600B61260 /* ResultSesacView.swift */; };
 		B837C80527C2C08F00B61260 /* ResultSesacViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B837C80427C2C08F00B61260 /* ResultSesacViewModel.swift */; };
 		B837C80727C2C09B00B61260 /* ResultHttpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B837C80627C2C09B00B61260 /* ResultHttpViewModel.swift */; };
@@ -148,7 +148,7 @@
 		B837C7F727C21B8500B61260 /* ResultRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRequestViewModel.swift; sourceTree = "<group>"; };
 		B837C7F927C21B9500B61260 /* ResultRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRequestView.swift; sourceTree = "<group>"; };
 		B837C7FE27C2785900B61260 /* ResultNearSesacViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultNearSesacViewController.swift; sourceTree = "<group>"; };
-		B837C80027C2788600B61260 /* ResultReceivedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultReceivedViewController.swift; sourceTree = "<group>"; };
+		B837C80027C2788600B61260 /* ResultReceivedSesacViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultReceivedSesacViewController.swift; sourceTree = "<group>"; };
 		B837C80227C29D9600B61260 /* ResultSesacView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSesacView.swift; sourceTree = "<group>"; };
 		B837C80427C2C08F00B61260 /* ResultSesacViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSesacViewModel.swift; sourceTree = "<group>"; };
 		B837C80627C2C09B00B61260 /* ResultHttpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultHttpViewModel.swift; sourceTree = "<group>"; };
@@ -408,7 +408,7 @@
 				B8E1FA7727B640070049D80D /* StartRequestViewController.swift */,
 				B8E1FA7927B640120049D80D /* ResultRequestViewController.swift */,
 				B837C7FE27C2785900B61260 /* ResultNearSesacViewController.swift */,
-				B837C80027C2788600B61260 /* ResultReceivedViewController.swift */,
+				B837C80027C2788600B61260 /* ResultReceivedSesacViewController.swift */,
 				B8E1FA7B27B6401A0049D80D /* ChatViewController.swift */,
 			);
 			path = ViewController;
@@ -823,7 +823,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B837C80127C2788600B61260 /* ResultReceivedViewController.swift in Sources */,
+				B837C80127C2788600B61260 /* ResultReceivedSesacViewController.swift in Sources */,
 				B8F36F692798E2070088628B /* AuthViewController.swift in Sources */,
 				B87D42D627A76037002D528D /* SignupHTTPViewModel.swift in Sources */,
 				B80A0C3B2796C61E004E1BB3 /* UIFont+Extension.swift in Sources */,

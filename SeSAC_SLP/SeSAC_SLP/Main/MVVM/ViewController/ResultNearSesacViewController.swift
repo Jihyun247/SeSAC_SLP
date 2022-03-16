@@ -38,25 +38,21 @@ class ResultNearSesacViewController: UIViewController {
         let output = viewModel.transform(input: input)
         
         output.nearSesac.bind(to: mainView.sesacTableView.rx.items(cellIdentifier: ProfileCardTableViewCell.identifier, cellType: ProfileCardTableViewCell.self)) { (row, element, cell) in
-            print("??")
-            cell.setup(status: .near, hobby: element.hf)
+            
             cell.backgroundImageView.image = UIImage(named: "sesac_background_\(element.background+1)")
             cell.sesacImageView.image = UIImage(named: "sesac_face_\(element.sesac+1)")
             cell.nicknameLabel.text = element.nick
             cell.arrowButton.rx.tap
                 .subscribe { _ in
+                    cell.isOpened = !cell.isOpened
                     if cell.isOpened {
-                        cell.detailStackView.isHidden = true
-                        cell.layoutSubviews()
-                        cell.isOpened = false
-                    } else {
                         cell.detailStackView.isHidden = false
-                        cell.layoutSubviews()
-                        cell.isOpened = true
+                    } else {
+                        cell.detailStackView.isHidden = true
                     }
+                    self.mainView.sesacTableView.reloadData()
                 }
                 .disposed(by: cell.disposeBag)
-            cell.disposeBag = DisposeBag()
         }
         .disposed(by: disposeBag)
         

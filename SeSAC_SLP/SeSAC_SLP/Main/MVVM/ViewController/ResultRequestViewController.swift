@@ -14,7 +14,7 @@ import Pageboy
 
 class ResultRequestViewController: TabmanViewController {
     
-    private let viewControllers = [ResultNearSesacViewController(), ResultReceivedViewController()]
+    private let viewControllers = [ResultNearSesacViewController(), ResultReceivedSesacViewController()]
     private let titleList = ["주변 새싹", "받은 요청"]
     
     var style: ToastStyle = {
