@@ -17,6 +17,7 @@ class ResultRequestViewController: TabmanViewController {
     private let viewControllers = [ResultNearSesacViewController(), ResultReceivedSesacViewController()]
     private let titleList = ["주변 새싹", "받은 요청"]
     
+    var timer: Timer?
     var style: ToastStyle = {
         var style = ToastStyle()
         style.backgroundColor = .sesacGray3
@@ -41,11 +42,18 @@ class ResultRequestViewController: TabmanViewController {
         navigationController?.navigationBarWithRightItem(navigationItem: self.navigationItem, title: "찾기중단", action: #selector(stopRequestButtonClicked))
         setTabman()
         binding()
+        
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(refreshQueueEvery5Sec), userInfo: nil, repeats: true)
     }
     
     @objc func stopRequestButtonClicked() {
             // delete queue http
-        }
+    }
+    
+    @objc func refreshStatusEvery5Sec() {
+        
+        viewModel.
+    }
     
     func setTabman() {
         
