@@ -18,8 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = UIWindow(windowScene: windowScene)
         self.window?.backgroundColor = .white
 
-        window?.rootViewController = UINavigationController(rootViewController: ResultRequestViewController())
-        //window?.rootViewController = OnboardingViewController()
+        //window?.rootViewController = UINavigationController(rootViewController: ResultRequestViewController())
+        window?.rootViewController = OnboardingViewController()
         window?.makeKeyAndVisible()
     }
 

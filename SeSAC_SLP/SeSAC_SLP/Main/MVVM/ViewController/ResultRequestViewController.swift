@@ -43,7 +43,7 @@ class ResultRequestViewController: TabmanViewController {
         setTabman()
         binding()
         
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(refreshQueueEvery5Sec), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(refreshStatusEvery5Sec), userInfo: nil, repeats: true)
     }
     
     @objc func stopRequestButtonClicked() {
@@ -52,7 +52,7 @@ class ResultRequestViewController: TabmanViewController {
     
     @objc func refreshStatusEvery5Sec() {
         
-        viewModel.
+        //viewModel.
     }
     
     func setTabman() {
